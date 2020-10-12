@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Login = () => (
+const Auth = () => (
   <div>
     <p>To jest strona logowania</p>
     <button
@@ -13,4 +13,4 @@ const Login = () => (
   </div>
 );
 
-export default Login;
+export default Auth;
