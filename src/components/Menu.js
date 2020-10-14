@@ -5,6 +5,9 @@ import styles from './Menu.module.css';
 const Menu = () => {
   return (
     <nav>
+      <NavLink to="/auth" activeClassName={styles.activeLink}>
+        Auth
+      </NavLink>
       <NavLink to="/home" activeClassName={styles.activeLink}>
         Home
       </NavLink>

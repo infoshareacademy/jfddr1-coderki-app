@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Auth.module.css';
+import styles from './AuthPage.module.css';
 
 const Header = () => {
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
   );
 };
 
-const Auth = () => {
+const AuthPage = () => {
   return (
     <div className={styles.container}>
       <Header />
@@ -43,4 +43,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default AuthPage;
