@@ -1,18 +1,21 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-// import styles from './AppWithRouting.module.css';
+import styles from './AppRouter.module.css';
 import AuthPage from './views/AuthPage';
 import Menu from './components/Menu';
 import HomePage from './views/HomePage';
 import CalendarPage from './views/CalendarPage';
 import TasksPage from './views/TasksPage';
 import SettingsPage from './views/SettingsPage';
+import logo from './img/logo.jpg';
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Link to="/">
-        <h1>Logo</h1>
+        <h1>
+          <img src={logo} className={styles.logo} alt="Logo" />
+        </h1>
       </Link>
       <div>
         <Switch>

@@ -1,14 +1,6 @@
 import React from 'react';
 import styles from './AuthPage.module.css';
 
-const Header = () => {
-  return (
-    <div>
-      <h2>Home Manager</h2>
-    </div>
-  );
-};
-
 const Footer = () => {
   return (
     <div>
@@ -19,27 +11,35 @@ const Footer = () => {
 
 const AuthPage = () => {
   return (
-    <div className={styles.container}>
-      <Header />
-      <form className={styles.authForm}>
-        <label>Email</label>
-        <input type="email" name="email" />
-        <label>Password</label>
-        <input type="password" name="password" />
-        <label>Confirm password</label>
-        <input type="password" name="password" />
-        <button>Login</button>
-      </form>
-      <div>
-        <p>
-          You do not have an account?
-          <a href="#" target="_blank">
+    <>
+      <div className={styles.container}>
+        <form className={styles.authForm}>
+          <label>Email </label>
+          <input type="email" name="email" placeholder="Enter Email" />
+          <label>Password </label>
+          <input type="password" name="password" placeholder="Enter Password" />
+          <label>Confirm password </label>
+          <input
+            type="password"
+            name="password-repeat"
+            placeholder="Repeat Password"
+          />
+          <button type="submit" className={styles.registerbtn}>
             Register
-          </a>
-        </p>
+          </button>
+        </form>
+        <div className={styles.signin}>
+          <p>
+            Already have an account?{' '}
+            <a href="#" target="_blank">
+              Sign in
+            </a>
+            .
+          </p>
+        </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
