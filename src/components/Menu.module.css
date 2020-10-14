@@ -1,0 +1,28 @@
+.menu {
+    background-color: #e2e2e2;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+.menu a {
+    width: 80px;
+    height: 30px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    color: #121112;
+    padding: 6px;
+    margin-bottom: 6px;
+    line-height: 28px;
+}
+
+.menu a:hover {
+    background-color: #d0d0d0;
+}
+
+.activeLink {
+    background-color: #c3c3c3;
+}
