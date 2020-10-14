@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/jfddr1-coderki-app/src/index.js/static/css/main.5a2db087.chunk.css",
+    "main.js": "/jfddr1-coderki-app/src/index.js/static/js/main.d3638b40.chunk.js",
+    "main.js.map": "/jfddr1-coderki-app/src/index.js/static/js/main.d3638b40.chunk.js.map",
+    "runtime-main.js": "/jfddr1-coderki-app/src/index.js/static/js/runtime-main.1a68a926.js",
+    "runtime-main.js.map": "/jfddr1-coderki-app/src/index.js/static/js/runtime-main.1a68a926.js.map",
+    "static/js/2.bd6ddf01.chunk.js": "/jfddr1-coderki-app/src/index.js/static/js/2.bd6ddf01.chunk.js",
+    "static/js/2.bd6ddf01.chunk.js.map": "/jfddr1-coderki-app/src/index.js/static/js/2.bd6ddf01.chunk.js.map",
+    "index.html": "/jfddr1-coderki-app/src/index.js/index.html",
+    "precache-manifest.e3aef536415b95f6876b20b8a5bdaafc.js": "/jfddr1-coderki-app/src/index.js/precache-manifest.e3aef536415b95f6876b20b8a5bdaafc.js",
+    "service-worker.js": "/jfddr1-coderki-app/src/index.js/service-worker.js",
+    "static/css/main.5a2db087.chunk.css.map": "/jfddr1-coderki-app/src/index.js/static/css/main.5a2db087.chunk.css.map",
+    "static/js/2.bd6ddf01.chunk.js.LICENSE.txt": "/jfddr1-coderki-app/src/index.js/static/js/2.bd6ddf01.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a68a926.js",
+    "static/js/2.bd6ddf01.chunk.js",
+    "static/css/main.5a2db087.chunk.css",
+    "static/js/main.d3638b40.chunk.js"
+  ]
+}
