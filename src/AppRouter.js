@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 // import styles from './AppWithRouting.module.css';
+import Auth from './components/Auth';
 import Menu from './components/Menu';
 import HomePage from './views/HomePage';
 import CalendarPage from './views/CalendarPage';
@@ -14,21 +15,26 @@ const AppRouter = () => {
         <h1>Logo</h1>
       </Link>
       <div>
-        <Menu />
+        <Auth />
         <Switch>
           <Route path="/home">
+            <Menu />
             <HomePage />
           </Route>
           <Route path="/calendar">
+            <Menu />
             <CalendarPage />
           </Route>
           <Route path="/tasks">
+            <Menu />
             <TasksPage />
           </Route>
           <Route path="/settings">
+            <Menu />
             <SettingsPage />
           </Route>
           <Route path="/">
+            <Menu />
             <HomePage />
           </Route>
         </Switch>
