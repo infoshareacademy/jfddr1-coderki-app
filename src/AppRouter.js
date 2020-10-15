@@ -7,7 +7,7 @@ import HomePage from './views/HomePage';
 import CalendarPage from './views/CalendarPage';
 import TasksPage from './views/TasksPage';
 import SettingsPage from './views/SettingsPage';
-import logo from './img/logo.jpg';
+import logo from './img/logo.png';
 
 const AppRouter = () => {
   return (
