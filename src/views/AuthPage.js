@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './AuthPage.module.css';
 
 const Footer = () => {
@@ -10,6 +10,8 @@ const Footer = () => {
 };
 
 const AuthPage = () => {
+  const [showRepeatPassword, setShowRepeatPassword] = useState(true);
+
   return (
     <>
       <div className={styles.container}>
@@ -18,21 +20,30 @@ const AuthPage = () => {
           <input type="email" name="email" placeholder="Enter Email" />
           <label>Password </label>
           <input type="password" name="password" placeholder="Enter Password" />
-          <label>Confirm password </label>
-          <input
-            type="password"
-            name="password-repeat"
-            placeholder="Repeat Password"
-          />
+          {showRepeatPassword && (
+            <div>
+              <label>Confirm password </label>
+              <input
+                type="password"
+                name="password-repeat"
+                placeholder="Repeat Password"
+              />
+            </div>
+          )}
           <button type="submit" className={styles.registerbtn}>
-            Register
+            {showRepeatPassword ? 'Register' : 'Login'}
           </button>
         </form>
         <div className={styles.signin}>
           <p>
-            Already have an account?{' '}
-            <a href="#" target="_blank">
-              Sign in
+            {showRepeatPassword
+              ? 'Already have an account? '
+              : "Don't have an account? "}
+            <a
+              href="#"
+              onClick={() => setShowRepeatPassword(!showRepeatPassword)}
+            >
+              {showRepeatPassword ? 'Sign in' : 'Register'}
             </a>
             .
           </p>
