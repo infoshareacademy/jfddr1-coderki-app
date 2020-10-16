@@ -1,16 +1,27 @@
 import React from 'react';
 import styles from './AccountInfo.module.css';
 
-export const AccountInfo = () => {
+export const AccountInfo = ({ userName, setSettings }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.header}>Your account information: </h1>
       <form>
-        <input type="text" name="userName" placeholder="Enter your name" />
+        <input
+          name="userName"
+          onChange={e => setSettings('userName', e.target.value)}
+          placeholder="Enter your name"
+          type="text"
+          value={userName}
+        />
       </form>
       <h2 className={styles.subheader}>Choose your family role</h2>
       <div className={styles.buttonContainer}>
-        <button type="submit">Parent</button>
+        <button
+          onClick={() => setSettings('familyRole', 'parent')}
+          type="submit"
+        >
+          Parent
+        </button>
         <button type="submit">Kid</button>
       </div>
       <h2 className={styles.subheader}>Add your photo</h2>
