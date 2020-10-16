@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/jfddr1-coderki-app/static/css/main.8c1f50f1.chunk.css",
-    "main.js": "/jfddr1-coderki-app/static/js/main.e1bef8fa.chunk.js",
-    "main.js.map": "/jfddr1-coderki-app/static/js/main.e1bef8fa.chunk.js.map",
+    "main.css": "/jfddr1-coderki-app/static/css/main.e155fe0e.chunk.css",
+    "main.js": "/jfddr1-coderki-app/static/js/main.eae1c172.chunk.js",
+    "main.js.map": "/jfddr1-coderki-app/static/js/main.eae1c172.chunk.js.map",
     "runtime-main.js": "/jfddr1-coderki-app/static/js/runtime-main.c34a3d54.js",
     "runtime-main.js.map": "/jfddr1-coderki-app/static/js/runtime-main.c34a3d54.js.map",
-    "static/js/2.b465a38d.chunk.js": "/jfddr1-coderki-app/static/js/2.b465a38d.chunk.js",
-    "static/js/2.b465a38d.chunk.js.map": "/jfddr1-coderki-app/static/js/2.b465a38d.chunk.js.map",
+    "static/js/2.10b67a69.chunk.js": "/jfddr1-coderki-app/static/js/2.10b67a69.chunk.js",
+    "static/js/2.10b67a69.chunk.js.map": "/jfddr1-coderki-app/static/js/2.10b67a69.chunk.js.map",
     "index.html": "/jfddr1-coderki-app/index.html",
-    "precache-manifest.92ff2916032e9d797b5d06574aa60ce3.js": "/jfddr1-coderki-app/precache-manifest.92ff2916032e9d797b5d06574aa60ce3.js",
+    "precache-manifest.c64f6ca4248731dbab10b96fec2c23ab.js": "/jfddr1-coderki-app/precache-manifest.c64f6ca4248731dbab10b96fec2c23ab.js",
     "service-worker.js": "/jfddr1-coderki-app/service-worker.js",
-    "static/css/main.8c1f50f1.chunk.css.map": "/jfddr1-coderki-app/static/css/main.8c1f50f1.chunk.css.map",
-    "static/js/2.b465a38d.chunk.js.LICENSE.txt": "/jfddr1-coderki-app/static/js/2.b465a38d.chunk.js.LICENSE.txt",
+    "static/css/main.e155fe0e.chunk.css.map": "/jfddr1-coderki-app/static/css/main.e155fe0e.chunk.css.map",
+    "static/js/2.10b67a69.chunk.js.LICENSE.txt": "/jfddr1-coderki-app/static/js/2.10b67a69.chunk.js.LICENSE.txt",
     "static/media/calendar.svg": "/jfddr1-coderki-app/static/media/calendar.b4cb4ea7.svg",
     "static/media/checkbox.svg": "/jfddr1-coderki-app/static/media/checkbox.d9b70962.svg",
     "static/media/home.svg": "/jfddr1-coderki-app/static/media/home.261cde57.svg",
-    "static/media/logo.jpg": "/jfddr1-coderki-app/static/media/logo.e3aa5c10.jpg",
+    "static/media/logo.png": "/jfddr1-coderki-app/static/media/logo.15a171fb.png",
     "static/media/settings.svg": "/jfddr1-coderki-app/static/media/settings.4551cf72.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c34a3d54.js",
-    "static/js/2.b465a38d.chunk.js",
-    "static/css/main.8c1f50f1.chunk.css",
-    "static/js/main.e1bef8fa.chunk.js"
+    "static/js/2.10b67a69.chunk.js",
+    "static/css/main.e155fe0e.chunk.css",
+    "static/js/main.eae1c172.chunk.js"
   ]
 }

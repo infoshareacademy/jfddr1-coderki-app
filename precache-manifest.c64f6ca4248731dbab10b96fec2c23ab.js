@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a7ea9bef6333d89d0f026c489092209c",
+    "revision": "a02d51caef8f7699b9468a0ec01b432b",
     "url": "/jfddr1-coderki-app/index.html"
   },
   {
-    "revision": "eda367fe08ef183e9fd2",
-    "url": "/jfddr1-coderki-app/static/css/main.8c1f50f1.chunk.css"
+    "revision": "ec1ca874a8654cdc2b5e",
+    "url": "/jfddr1-coderki-app/static/css/main.e155fe0e.chunk.css"
   },
   {
-    "revision": "953b777e53a7019750fe",
-    "url": "/jfddr1-coderki-app/static/js/2.b465a38d.chunk.js"
+    "revision": "9a1b345a1b66308f5175",
+    "url": "/jfddr1-coderki-app/static/js/2.10b67a69.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/jfddr1-coderki-app/static/js/2.b465a38d.chunk.js.LICENSE.txt"
+    "url": "/jfddr1-coderki-app/static/js/2.10b67a69.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eda367fe08ef183e9fd2",
-    "url": "/jfddr1-coderki-app/static/js/main.e1bef8fa.chunk.js"
+    "revision": "ec1ca874a8654cdc2b5e",
+    "url": "/jfddr1-coderki-app/static/js/main.eae1c172.chunk.js"
   },
   {
     "revision": "8067ca46ea3c38110a67",
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jfddr1-coderki-app/static/media/home.261cde57.svg"
   },
   {
-    "revision": "e3aa5c1051376543e503d327f937df11",
-    "url": "/jfddr1-coderki-app/static/media/logo.e3aa5c10.jpg"
+    "revision": "15a171fb57f032924ae52a4c5904f29b",
+    "url": "/jfddr1-coderki-app/static/media/logo.15a171fb.png"
   },
   {
     "revision": "4551cf72f61a1dde39898aad210c6ef4",
