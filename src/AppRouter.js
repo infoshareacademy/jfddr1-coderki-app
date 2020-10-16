@@ -13,9 +13,9 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Link to="/">
-        <h1>
+        <div>
           <img src={logo} className={styles.logo} alt="Logo" />
-        </h1>
+        </div>
       </Link>
       <div>
         <Switch>
