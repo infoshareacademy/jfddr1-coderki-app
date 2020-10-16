@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "db75b571b15db986bc3faf8e8de30b49",
+    "revision": "5a8cb8f993edcd3515cd19c3c1c1c096",
     "url": "/jfddr1-coderki-app/index.html"
   },
   {
-    "revision": "ac39b0814d83b1413db0",
-    "url": "/jfddr1-coderki-app/static/css/main.83010dd0.chunk.css"
+    "revision": "ec52cd3173d12a4e0a4e",
+    "url": "/jfddr1-coderki-app/static/css/main.ca9d239e.chunk.css"
   },
   {
     "revision": "1a89a7c30afb26d26318",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jfddr1-coderki-app/static/js/2.6929292c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ac39b0814d83b1413db0",
-    "url": "/jfddr1-coderki-app/static/js/main.3bb3ab5f.chunk.js"
+    "revision": "ec52cd3173d12a4e0a4e",
+    "url": "/jfddr1-coderki-app/static/js/main.6fb9b6fb.chunk.js"
   },
   {
     "revision": "8067ca46ea3c38110a67",
