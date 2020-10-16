@@ -1,0 +1,11 @@
+.container {
+  padding: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.1rem;
+}
