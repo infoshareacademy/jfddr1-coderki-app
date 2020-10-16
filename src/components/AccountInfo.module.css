@@ -1,6 +1,11 @@
-.title {
-  font-size: 1.1rem;
+.header {
+  font-size: 1.4rem;
+  padding: 10px;
 }
+.subheader {
+  font-size: 1.2rem;
+}
+
 .form {
   margin: 0 auto;
   display: flex;
