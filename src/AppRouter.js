@@ -20,7 +20,6 @@ const AppRouter = () => {
       <div>
         <Switch>
           <Route path="/auth">
-            <Menu />
             <AuthPage />
           </Route>
           <Route path="/home">

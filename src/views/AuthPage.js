@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
+import Footer from '../components/Footer';
 import styles from './AuthPage.module.css';
-
-const Footer = () => {
-  return (
-    <div>
-      <h2>This will be a footer</h2>
-    </div>
-  );
-};
 
 const AuthPage = () => {
   const [showRepeatPassword, setShowRepeatPassword] = useState(true);

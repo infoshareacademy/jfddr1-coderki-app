@@ -1,0 +1,19 @@
+.footerContainer {
+  width: 100%;
+  background: #3f5097;
+  color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  margin-top: 7rem;
+  font-size: 12px;
+}
+
+.paragraph {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 0.6em;
+  font-size: 14px;
+}
+
+.link {
+  color: #ffffff;
+}
