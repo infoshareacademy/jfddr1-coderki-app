@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import styles from './AppRouter.module.css';
 import AuthPage from './views/AuthPage';
 import Menu from './components/Menu';
+import Header from './components/Header';
 import HomePage from './views/HomePage';
 import CalendarPage from './views/CalendarPage';
 import TasksPage from './views/TasksPage';
@@ -12,29 +12,35 @@ import logo from './img/logo.png';
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Link to="/">
-        <div>
-          <img src={logo} className={styles.logo} alt="Logo" />
-        </div>
-      </Link>
       <div>
         <Switch>
           <Route path="/auth">
+            <Link to="/">
+              <img
+                src={logo}
+                style={{ width: '100%', borderRadius: 10 }}
+                alt="Logo"
+              />
+            </Link>
             <AuthPage />
           </Route>
           <Route path="/home">
+            <Header children="Home" />
             <Menu />
             <HomePage />
           </Route>
           <Route path="/calendar">
+            <Header children="Calendar" />
             <Menu />
             <CalendarPage />
           </Route>
           <Route path="/tasks">
+            <Header children="Tasks" />
             <Menu />
             <TasksPage />
           </Route>
           <Route path="/settings">
+            <Header children="Settings" />
             <Menu />
             <SettingsPage />
           </Route>
