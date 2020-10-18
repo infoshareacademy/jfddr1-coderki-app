@@ -1,15 +1,10 @@
 import React from 'react';
 import styles from './TaskContainer.module.css';
-import { getTasksList } from '../mockData/tasksData';
 
-export const TaskContainer = () => {
-  const tasksData = getTasksList();
-
-  const task = tasksData[0];
-  console.log(tasksData);
+export const TaskContainer = ({ tasks }) => {
   return (
     <div>
-      {tasksData.map((task, index) => (
+      {tasks.map((task, index) => (
         <>
           <div className={styles.container}>
             <p className={styles.smallerText}>
