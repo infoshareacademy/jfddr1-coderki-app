@@ -1,12 +1,11 @@
 import React from 'react';
-import styles from './AuthPage.module.css';
+import { Header } from '../components/Header';
 import { TaskContainer } from '../components/TaskContainer';
 
 const HomePage = () => {
   return (
     <>
-      <TaskContainer />
-      <TaskContainer />
+      {/* <Header /> */}
       <TaskContainer />
     </>
   );

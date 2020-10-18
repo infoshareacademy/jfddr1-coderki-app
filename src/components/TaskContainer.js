@@ -1,12 +1,26 @@
 import React from 'react';
 import styles from './TaskContainer.module.css';
+import { getTasksList } from '../mockData/tasksData';
 
 export const TaskContainer = () => {
+  const tasksData = getTasksList();
+
+  const task = tasksData[0];
+  console.log(tasksData);
   return (
-    <div className={styles.container}>
-      <p className={styles.smallerText}>25th Sep 13:00 - 13:30</p>
-      <p className={styles.TitleText}>Dentist - younger kid</p>
-      <p className={styles.smallerText}>Gdynia, ul. Świętojańska</p>
+    <div>
+      {tasksData.map((task, index) => (
+        <>
+          <div className={styles.container}>
+            <p className={styles.smallerText}>
+              {task.date}
+              <span style={{ marginLeft: 15 }}>{task.time}</span>
+            </p>
+            <p className={styles.titleText}>{task.task_title}</p>
+            <p className={styles.smallerText}>{task.place}</p>
+          </div>
+        </>
+      ))}
     </div>
   );
 };

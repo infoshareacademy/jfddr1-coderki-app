@@ -5,10 +5,10 @@
   border: solid 1px #ddd;
   border-left: 20px solid yellow;
   border-radius: 10px;
+  margin: 2px 0;
   padding-left: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin: 5px 0;
   height: fit-content;
 }
 
@@ -20,4 +20,5 @@
 
 .titleText {
   font-size: 15px;
+  margin: 2px 0;
 }
