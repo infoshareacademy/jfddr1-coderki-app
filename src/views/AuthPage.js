@@ -31,7 +31,7 @@ const AuthPage = () => {
           <p>
             {showRepeatPassword
               ? 'Already have an account? '
-              : "Don't have an account? "}
+              : "Don't have an account yet? "}
             <a
               href="#"
               onClick={() => setShowRepeatPassword(!showRepeatPassword)}
