@@ -5,7 +5,7 @@ import AppRouter from './AppRouter';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ height: '100%' }}>
       <header className="App-header">
         <AppRouter />
       </header>

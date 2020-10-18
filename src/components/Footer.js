@@ -17,7 +17,9 @@ const Footer = () => {
       </p>
       <p
         style={{
-          padding: '0.6em',
+          padding: '0.5em',
+          margin: 5,
+          textAlign: 'center',
         }}
       >
         &copy; Coderki App 2020. All rights reserved.

@@ -18,7 +18,7 @@ const AppRouter = () => {
             <Link to="/">
               <img
                 src={logo}
-                style={{ width: '100%', borderRadius: 10 }}
+                style={{ width: '100%', borderRadius: 10, paddingBottom: 30 }}
                 alt="Logo"
               />
             </Link>

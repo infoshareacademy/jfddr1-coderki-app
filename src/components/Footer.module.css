@@ -10,8 +10,9 @@
 .paragraph {
   width: 80%;
   margin: 0 auto;
-  padding-top: 0.6em;
+  padding: 0.7em;
   font-size: 14px;
+  text-align: center;
 }
 
 .link {
