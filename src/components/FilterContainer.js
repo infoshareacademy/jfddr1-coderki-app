@@ -4,7 +4,7 @@ import styles from './FilterContainer.module.css';
 
 const FilterContainer = () => {
   return (
-    <div style={{ padding: 5 }}>
+    <div style={{ padding: '10px 5px 5px 5px' }}>
       <label>Search task by phrase:</label>
       <div style={{ display: 'flex', height: 40 }}>
         <input name="searchField" style={{ width: '98%', height: 20 }} />
@@ -43,9 +43,8 @@ const FilterContainer = () => {
         <h2
           style={{
             textAlign: 'center',
-            marginBottom: 0,
+            marginBottom: 5,
             paddingBottom: 3,
-            borderBottom: '1px solid #C5C5C5',
           }}
         >
           All tasks
