@@ -5,6 +5,7 @@ import Menu from './components/Menu';
 import Header from './components/Header';
 import HomePage from './views/HomePage';
 import CalendarPage from './views/CalendarPage';
+import NewTasksPage from './views/NewTasksPage';
 import TasksPage from './views/TasksPage';
 import SettingsPage from './views/SettingsPage';
 import logo from './img/logo.png';
@@ -33,6 +34,10 @@ const AppRouter = () => {
             <Header children="Calendar" />
             <Menu />
             <CalendarPage />
+          </Route>
+          <Route path="/addTask">
+            <Header children="Create new task" />
+            <NewTasksPage />
           </Route>
           <Route path="/tasks">
             <Header children="Tasks" />

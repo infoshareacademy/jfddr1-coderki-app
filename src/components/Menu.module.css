@@ -2,7 +2,7 @@
   background-color: #ffffff;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
   height: 70px;
   width: 100%;
@@ -10,14 +10,18 @@
   bottom: 0;
 }
 
-.menu a {
+.navItem {
+  width: 40px;
+  height: 40px;
+  color: blue;
   text-align: center;
   text-decoration: none;
-  padding: 10px;
+  padding-top: 10px;
+  margin-top: 10px;
 }
 
-.navItem {
+.addTaskBtn {
   width: 50px;
   height: 50px;
-  color: blue;
+  margin-top: 10px;
 }
