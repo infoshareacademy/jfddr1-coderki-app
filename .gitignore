@@ -27,4 +27,4 @@ yarn-error.log*
 other
 
 # Firebase
-/firestore.config.js
+/Firebase
