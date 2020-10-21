@@ -9,8 +9,15 @@ import styles from './SettingsPage.module.css';
 const initialState = {
   userName: '',
   familyRole: '',
+  selectedFile: '',
   taskCategory: '',
-  // etc.
+  taskCategoryColour: '',
+  privateOrPublic: '',
+  emailNotifications: '',
+  // localtimezone??
+  // MondaySunday??
+  // ChangePassword??
+  // Logout??
 };
 
 const SettingsPage = () => {
@@ -49,16 +56,28 @@ const SettingsPage = () => {
     console.log('settings:', settings);
   };
 
-
   return (
     <div className={styles.container}>
       <AccountInfo
         name={settings.userName}
         setSettings={handleSetSettings}
+        name={settings.familyRole}
+        setSettings={handleSetSettings}
+        name={settings.selectedFile}
+        setSettings={handleSetSettings}
       />
-      {/* etc. */}
-      <TaskSettings />
-      <MainSettings />
+      <TaskSettings
+        name={settings.taskCategory}
+        setSettings={handleSetSettings}
+        name={settings.taskCategoryColour}
+        setSettings={handleSetSettings}
+      />
+      <MainSettings
+        name={settings.privateOrPublic}
+        setSettings={handleSetSettings}
+        name={settings.emailNotifications}
+        setSettings={handleSetSettings}
+      />
       <button onClick={handleSubmit}>Save</button>
     </div>
   );
