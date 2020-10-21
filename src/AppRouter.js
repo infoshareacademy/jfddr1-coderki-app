@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import AuthPage from './views/AuthPage';
+import AuthPage from './views/auth/AuthPage';
 import Menu from './components/Menu';
 import Header from './components/Header';
-import HomePage from './views/HomePage';
-import CalendarPage from './views/CalendarPage';
-import NewTasksPage from './views/NewTasksPage';
-import TasksPage from './views/TasksPage';
-import SettingsPage from './views/SettingsPage';
+import HomePage from './views/home/HomePage';
+import CalendarPage from './views/calendar/CalendarPage';
+import NewTasksPage from './views/tasks/NewTasksPage';
+import TasksPage from './views/tasks/TasksPage';
+import SettingsPage from './views/settings/SettingsPage';
 import logo from './img/logo.png';
 
 const AppRouter = () => {
