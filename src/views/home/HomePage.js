@@ -1,11 +1,11 @@
 import React from 'react';
-import { TaskList } from '../../components/TaskList';
+import { TasksList } from '../../components/TasksList';
 
 const HomePage = () => {
   return (
     <>
       {/* <Header /> */}
-      <TaskList />
+      <TasksList />
     </>
   );
 };
