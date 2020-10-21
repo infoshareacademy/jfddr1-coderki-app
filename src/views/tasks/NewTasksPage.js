@@ -1,12 +1,19 @@
-import React from 'react';
-// import styles from './TasksPage.module.css';
+// import React from 'react';
+// import TasksDatabase from '../../Firebase/firebase';
 
-const NewTasksPage = () => {
-  return (
-    <div>
-      <h2>Dodaj nowy task</h2>
-    </div>
-  );
-};
+// // import styles from './TasksPage.module.css';
 
-export default NewTasksPage;
+// const collection = TasksDatabase.collection('tasks')
+//   .get()
+//   .then((tasks) => {
+//     tasks.forEach((task) => {
+//       console.log(task.id);
+//       console.log(task.data());
+//     });
+//   });
+
+// const NewTasksPage = () => {
+//   return <div>{collection}</div>;
+// };
+
+// export default NewTasksPage;
