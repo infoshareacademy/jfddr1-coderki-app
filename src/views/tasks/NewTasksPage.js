@@ -1,9 +1,9 @@
 import React from 'react';
+import TasksDatabase from '../../Firebase/firebase';
+
 // import styles from './TasksPage.module.css';
 
-const TasksDatabase = firebase
-  .firestore()
-  .collection('tasks')
+const collection = TasksDatabase.collection('tasks')
   .get()
   .then((tasks) => {
     tasks.forEach((task) => {
@@ -13,7 +13,7 @@ const TasksDatabase = firebase
   });
 
 const NewTasksPage = () => {
-  return <div>Hello</div>;
+  return <div>{collection}</div>;
 };
 
 export default NewTasksPage;
