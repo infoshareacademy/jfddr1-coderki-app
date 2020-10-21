@@ -1,0 +1,19 @@
+.searchButton {
+  height: 32px;
+  width: 30px;
+  background: #3f5097;
+  text-align: 'center';
+  padding: 0;
+  margin: 5px 0 0 0;
+  opacity: 1;
+  border-radius: 0;
+}
+
+.searchIcon {
+  height: 60%;
+  width: 60%;
+  color: #ffffff;
+  padding-top: 6px;
+}
+
+/* zmienić kształt on Focus w inpucie i buttonie z border radius na 0 */

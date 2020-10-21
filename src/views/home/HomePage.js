@@ -1,13 +1,11 @@
 import React from 'react';
-import styles from '../auth/AuthPage.module.css';
-import { TaskContainer } from '../../components/TaskContainer';
+import { TaskList } from '../../components/TaskList';
 
 const HomePage = () => {
   return (
     <>
-      <TaskContainer />
-      <TaskContainer />
-      <TaskContainer />
+      {/* <Header /> */}
+      <TaskList />
     </>
   );
 };

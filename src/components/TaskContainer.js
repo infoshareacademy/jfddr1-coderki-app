@@ -1,12 +1,31 @@
 import React from 'react';
 import styles from './TaskContainer.module.css';
+import dots from '../img/horizontal-dots.svg';
 
-export const TaskContainer = () => {
+export const TaskContainer = ({ tasks }) => {
   return (
-    <div className={styles.container}>
-      <p className={styles.smallerText}>25th Sep 13:00 - 13:30</p>
-      <p className={styles.TitleText}>Dentist - younger kid</p>
-      <p className={styles.smallerText}>Gdynia, ul. Świętojańska</p>
+    <div style={{ paddingTop: 15 }}>
+      {tasks.map((task, index) => (
+        <>
+          <div className={styles.mainContainer}>
+            <div className={styles.textContainer}>
+              <p className={styles.smallerText}>
+                {task.date}
+                <span style={{ marginLeft: 15 }}>{task.time}</span>
+              </p>
+              <p className={styles.titleText}>{task.task_title}</p>
+              <p className={styles.smallerText}>{task.place}</p>
+            </div>
+            <div className={styles.iconContainer}>
+              <img
+                src={dots}
+                className={styles.seeMoreIcon}
+                alt="icon with 3 dots"
+              />
+            </div>
+          </div>
+        </>
+      ))}
     </div>
   );
 };

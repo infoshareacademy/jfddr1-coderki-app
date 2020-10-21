@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
+import Footer from '../components/Footer';
 import styles from './AuthPage.module.css';
-
-const Footer = () => {
-  return (
-    <div>
-      <h2>This will be a footer</h2>
-    </div>
-  );
-};
 
 const AuthPage = () => {
   const [showRepeatPassword, setShowRepeatPassword] = useState(true);
@@ -38,7 +31,7 @@ const AuthPage = () => {
           <p>
             {showRepeatPassword
               ? 'Already have an account? '
-              : "Don't have an account? "}
+              : "Don't have an account yet? "}
             <a
               href="#"
               onClick={() => setShowRepeatPassword(!showRepeatPassword)}

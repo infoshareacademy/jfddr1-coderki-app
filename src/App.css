@@ -1,11 +1,7 @@
 .App {
   margin: 0 auto;
-  text-align: center;
   font-family: 'Quicksand', sans-serif;
-  /* padding: 60px; */
-  background: #faf3f0;
-  height: 100vh;
-  width: 100%;
+  border-radius: 10px;
 }
 
 /* @media  */
