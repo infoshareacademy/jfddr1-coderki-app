@@ -35,10 +35,10 @@ const FilterContainer = () => {
           <select name="categories" style={{ fontFamily: 'Quicksand' }}>
             <option value="placeholder"></option>
             <option value="all">All</option>
-            <option value="active">Open</option>
-            <option value="active">In progress</option>
+            <option value="open">Open</option>
+            <option value="inProgress">In progress</option>
             <option value="someday">Someday</option>
-            <option value="completed">Completed</option>
+            <option value="closed">Closed</option>
           </select>
         </div>
         <h2
