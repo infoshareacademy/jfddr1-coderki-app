@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './AccountInfo.module.css';
 
-// What to do next:
-// Check how to set state for file object (profile picture) and colour object (taskCategoryColour)
-
 export const AccountInfo = ({
   userName,
   familyRole,
