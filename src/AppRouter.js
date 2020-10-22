@@ -5,7 +5,7 @@ import Menu from './components/Menu';
 import Header from './components/Header';
 import HomePage from './views/home/HomePage';
 import CalendarPage from './views/calendar/CalendarPage';
-import NewTasksPage from './views/tasks/NewTasksPage';
+import NewTask from './views/tasks/NewTasksPage';
 import TasksPage from './views/tasks/TasksPage';
 import SettingsPage from './views/settings/SettingsPage';
 import logo from './img/logo.png';
@@ -37,7 +37,7 @@ const AppRouter = () => {
           </Route>
           <Route path="/addTask">
             <Header children="Create new task" />
-            <NewTasksPage />
+            <NewTask />
           </Route>
           <Route path="/tasks">
             <Header children="Tasks" />

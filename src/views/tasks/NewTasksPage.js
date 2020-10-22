@@ -2,12 +2,13 @@ import React from 'react';
 // import firebase from 'firebase/app';
 import db from '../../Firebase/firebase';
 
-class Task extends React.Component {
+class NewTask extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
       place: '',
+      category: '',
     };
   }
 
@@ -17,15 +18,17 @@ class Task extends React.Component {
     });
   };
 
-  addUser = (e) => {
+  addTask = (e) => {
     e.preventDefault();
     db.collection('tasks').add({
       title: this.state.title,
       place: this.state.place,
+      category: this.state.category,
     });
     this.setState({
       title: '',
       place: '',
+      category: '',
     });
   };
 
@@ -33,7 +36,7 @@ class Task extends React.Component {
     return (
       <>
         <h1 style={{ textAlign: 'center' }}>Hello :)</h1>
-        <form onSubmit={this.addUser}>
+        <form onSubmit={this.addTask}>
           <input
             type="text"
             name="title"
@@ -48,10 +51,17 @@ class Task extends React.Component {
             onChange={this.updateInput}
             value={this.state.place}
           />
+          <input
+            type="text"
+            name="category"
+            placeholder="Category"
+            onChange={this.updateInput}
+            value={this.state.category}
+          />
           <button type="submit">CREATE TASK</button>
         </form>
       </>
     );
   }
 }
-export default Task;
+export default NewTask;
