@@ -3,7 +3,7 @@ import React from 'react';
 import { getTasksList } from '../mockData/tasksData';
 import { TaskContainer } from './TaskContainer';
 import styles from './TasksList.module.css';
-import db from '../../Firebase/firebase';
+// import db from '../../Firebase/firebase';
 
 export const TasksList = () => {
   const tasksData = getTasksList();

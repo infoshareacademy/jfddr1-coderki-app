@@ -59,24 +59,20 @@ const SettingsPage = () => {
   return (
     <div className={styles.container}>
       <AccountInfo
-        name={settings.userName}
+        userName={settings.userName}
         setSettings={handleSetSettings}
-        name={settings.familyRole}
-        setSettings={handleSetSettings}
-        name={settings.selectedFile}
-        setSettings={handleSetSettings}
+        familyRole={settings.familyRole}
+        selectedFile={settings.selectedFile}
       />
       <TaskSettings
-        name={settings.taskCategory}
+        taskCategory={settings.taskCategory}
         setSettings={handleSetSettings}
-        name={settings.taskCategoryColour}
-        setSettings={handleSetSettings}
+        taskCategoryColour={settings.taskCategoryColour}
       />
       <MainSettings
-        name={settings.privateOrPublic}
+        privateOrPublic={settings.privateOrPublic}
         setSettings={handleSetSettings}
-        name={settings.emailNotifications}
-        setSettings={handleSetSettings}
+        emailNotifications={settings.emailNotifications}
       />
       <button onClick={handleSubmit}>Save</button>
     </div>
