@@ -56,7 +56,7 @@ export const AccountInfo = ({
 
 export const TaskSettings = ({
   taskCategory,
-  // taskCategoryColour,
+  taskCategoryColour,
   setSettings,
 }) => {
   return (
@@ -70,14 +70,11 @@ export const TaskSettings = ({
           value={taskCategory}
           onChange={(e) => setSettings('taskCategory', e.target.value)}
         />
-        <button
-        // name="taskCategoryColour"
-        // type="colour"
-        // value={taskCategoryColour}
-        // onClick={(e) => setSettings('taskCategoryColour', e.target.value)}
-        >
-          Click to choose colour for your task category
-        </button>
+        <input
+          name="taskCategoryColour"
+          type="color"
+          onClick={(e) => setSettings('taskCategoryColour', e.target.value)}
+        />
       </div>
     </div>
   );
