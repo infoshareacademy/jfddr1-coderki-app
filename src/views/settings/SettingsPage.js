@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import {
-  AccountInfo,
-  MainSettings,
-  TaskSettings,
-} from '../../components/AccountInfo';
+import { AccountInfo } from '../../components/AccountInfo';
+import { MainSettings } from '../../components/MainSettings';
+import { TaskSettings } from '../../components/TaskSettings';
 import styles from './SettingsPage.module.css';
 
 const initialState = {
