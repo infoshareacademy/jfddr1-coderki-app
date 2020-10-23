@@ -5,11 +5,13 @@ import styles from './TasksList.module.css';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import FilterInput from './FilterInput';
+import CategoryFilter from './CategoryFilter';
 
 export const TasksList = () => {
   const [tasks, setTasks] = useState([]);
   const [filters, setFilters] = useState({
     byTitle: '',
+    byCategory: '',
   });
 
   useEffect(() => {
@@ -23,6 +25,8 @@ export const TasksList = () => {
           tasks.push({
             id: doc.id,
             title: doc.get('title'),
+            category: doc.get('category'),
+            status: doc.get('status'),
             startTimeData: doc.get('startTime').toDate().toDateString(),
             startTimeTime: doc
               .get('startTime')
@@ -39,13 +43,22 @@ export const TasksList = () => {
     task.title.toLowerCase().includes(filters.byTitle.toLowerCase())
   );
 
+  const tasksFilteredByCategory = tasksFilteredByTitle.filter((task) =>
+    task.category.toLowerCase().includes(filters.byCategory.toLowerCase())
+  );
+
   return (
     <div style={{ padding: '10px 5px 5px 5px' }}>
       <FilterInput
         onFilterSave={(value) => setFilters({ ...filters, byTitle: value })}
       />
+      <CategoryFilter
+        onCategorySelect={(value) =>
+          setFilters({ ...filters, byCategory: value })
+        }
+      />
       <div>
-        <div style={{ marginTop: 10 }}>
+        {/* <div style={{ marginTop: 10 }}>
           <label>Filter by categories: </label>
           <select name="categories" style={{ fontFamily: 'Quicksand' }}>
             <option value="placeholder"></option>
@@ -57,7 +70,7 @@ export const TasksList = () => {
             <option value="appointment">Appointment</option>
             <option value="work">Work</option>
           </select>
-        </div>
+        </div> */}
         <div style={{ marginTop: 10 }}>
           <label>Filter by status: </label>
           <select name="categories" style={{ fontFamily: 'Quicksand' }}>
@@ -80,7 +93,7 @@ export const TasksList = () => {
         </h2>
       </div>
       <div className={styles.tasksContainer}>
-        <TaskContainer tasks={tasksFilteredByTitle} />
+        <TaskContainer tasks={tasksFilteredByCategory} />
       </div>
     </div>
   );
