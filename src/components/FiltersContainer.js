@@ -1,21 +1,11 @@
-import React from 'react';
-import search from '../img/search.svg';
-import styles from './FilterContainer.module.css';
+import React, { useState } from 'react';
+import FilterInput from './FilterInput';
+// import search from '../img/search.svg';
+// import styles from './FiltersContainer.module.css';
 
-const FilterContainer = () => {
+const FiltersContainer = () => {
   return (
     <div style={{ padding: '10px 5px 5px 5px' }}>
-      <label>Search task by phrase:</label>
-      <div style={{ display: 'flex', height: 40 }}>
-        <input name="searchField" style={{ width: '98%', height: 20 }} />
-        <button type="submit" className={styles.searchButton}>
-          <img
-            src={search}
-            alt="icon of search lens"
-            className={styles.searchIcon}
-          />
-        </button>
-      </div>
       <div>
         <div style={{ marginTop: 10 }}>
           <label>Filter by categories: </label>
@@ -55,4 +45,4 @@ const FilterContainer = () => {
   );
 };
 
-export default FilterContainer;
+export default FiltersContainer;
