@@ -9,11 +9,11 @@ export const TaskContainer = ({ tasks }) => {
         <>
           <div className={styles.mainContainer}>
             <div className={styles.textContainer}>
-              {/* <p className={styles.smallerText}>
-                {task.date}
-                <span style={{ marginLeft: 15 }}>{task.time}</span>
-              </p> */}
-              <p className={styles.smallerText}>{task.startTime}</p>
+              <p className={styles.smallerText}>
+                {task.startTimeData}
+                <span style={{ marginLeft: 15 }}>{task.startTimeTime}</span>
+              </p>
+              {/* <p className={styles.smallerText}>{task.id}</p> */}
               {/* <p className={styles.titleText}>{task.task_title}</p> */}
               <p className={styles.titleText}>{task.title}</p>
               <p className={styles.smallerText}>{task.place}</p>

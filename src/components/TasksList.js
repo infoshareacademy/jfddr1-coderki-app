@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 // import styles from './TaskContainer.module.css';
-import { getTasksList } from '../mockData/tasksData';
 import { TaskContainer } from './TaskContainer';
 import styles from './TasksList.module.css';
 import * as firebase from 'firebase/app';
@@ -15,13 +14,19 @@ export const TasksList = () => {
       .collection('tasks')
       .onSnapshot((snapshot) => {
         const tasks = [];
-        snapshot.forEach((doc) =>
+
+        snapshot.forEach((doc) => {
           tasks.push({
             id: doc.id,
             title: doc.get('title'),
-            isDone: doc.get('isDone'),
-          })
-        );
+            startTimeData: doc.get('startTime').toDate().toDateString(),
+            startTimeTime: doc
+              .get('startTime')
+              .toDate()
+              .toLocaleTimeString('en-US'),
+            place: doc.get('place'),
+          });
+        });
         setTasks(tasks);
       });
   }, []);
