@@ -40,58 +40,48 @@ export const TasksList = () => {
   );
 
   return (
-    <div className={styles.tasksContainer}>
+    <div style={{ padding: '10px 5px 5px 5px' }}>
       <FilterInput
         onFilterSave={(value) => setFilters({ ...filters, byTitle: value })}
       />
-      <TaskContainer tasks={tasksFilteredByTitle} />
+      <div>
+        <div style={{ marginTop: 10 }}>
+          <label>Filter by categories: </label>
+          <select name="categories" style={{ fontFamily: 'Quicksand' }}>
+            <option value="placeholder"></option>
+            <option value="education">Education</option>
+            <option value="sport">Sport</option>
+            <option value="duties">House duties</option>
+            <option value="relax">Relax</option>
+            <option value="meeting">Meeting</option>
+            <option value="appointment">Appointment</option>
+            <option value="work">Work</option>
+          </select>
+        </div>
+        <div style={{ marginTop: 10 }}>
+          <label>Filter by status: </label>
+          <select name="categories" style={{ fontFamily: 'Quicksand' }}>
+            <option value="placeholder"></option>
+            <option value="all">All</option>
+            <option value="open">Open</option>
+            <option value="inProgress">In progress</option>
+            <option value="someday">Someday</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
+        <h2
+          style={{
+            textAlign: 'center',
+            marginBottom: 5,
+            paddingBottom: 3,
+          }}
+        >
+          All tasks
+        </h2>
+      </div>
+      <div className={styles.tasksContainer}>
+        <TaskContainer tasks={tasksFilteredByTitle} />
+      </div>
     </div>
   );
 };
-
-// const filmsData = getFilmsList();
-
-// const FilmsLibrary = () => {
-//   const [sortAscending, setSortAscending] = useState(true);
-//   const [filters, setFilters] = useState({
-//     byTitle: '',
-//     byYear: '',
-//   });
-//   const [filmsAddedByUser, setFilmsAddedByUser] = useState([]);
-
-//   const allFilms = [...filmsData, ...filmsAddedByUser];
-
-//   const filmSortedByTitle = allFilms.filter((film) =>
-//     film.Title.toLowerCase().includes(filters.byTitle.toLowerCase())
-//   );
-//   const filmSortedByYear = filmSortedByTitle.filter((film) =>
-//     film.Title.toLowerCase().includes(filters.byYear.toLowerCase())
-//   );
-//   const sortedFilms = [...filmSortedByYear].sort((film, nextFilm) =>
-//     sortAscending ? film.Year - nextFilm.Year : nextFilm.Year - film.Year
-//   );
-
-//   return (
-//     <>
-//       <h1>Films Library</h1>
-//       <FilterInput
-//         label="Filter by title"
-//         onFilterSave={(value) => setFilters({ ...filters, byTitle: value })}
-//       />
-//       <FilterInput
-//         label="Filter by year"
-//         onFilterSave={(value) => setFilters({ ...filters, byYear: value })}
-//       />
-//       <p>Sort:</p>
-//       <button onClick={() => setSortAscending(!sortAscending)}>
-//         {sortAscending ? 'Ascending' : 'Descending'}
-//       </button>
-//       <FilmsList title="Films list:" films={sortedFilms} />
-//       <AddFilm
-//         onAdd={(values) => setFilmsAddedByUser([...filmsAddedByUser, values])}
-//       />
-//     </>
-//   );
-// };
-
-// export default FilmsLibrary;
