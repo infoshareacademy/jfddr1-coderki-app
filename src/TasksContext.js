@@ -1,37 +1,20 @@
-// import React, { createContext } from 'react';
-
-// export const TaskContext = createContext();
-
-// category;
-// title;
-// date;
-// place;
-// status;
-// reminder;
-// repeat;
-// desription;
-// public / private;
-
-import React, { useState, createContext, useEffect, useContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
-import { UserContext } from './UserContext';
 
 export const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
-  const { user } = useContext(UserContext);
   const [tasks, setTasks] = useState(null);
+  //   const [selectedFilters, setSelectedFilters] = useState(['one', 'two'])
 
+  //   useEffect(() => {
+  //     // let's say we call Firebase here, then
+  //     setTasks(['raz', 'dwa', 'trzy']);
+  //   }, []);
   useEffect(() => {
-    if (user === null) {
-      return;
-    }
-
-    const cleanup = firebase
+    firebase
       .firestore()
-      .collection('users')
-      .doc(user.uid)
       .collection('tasks')
       .onSnapshot((snapshot) => {
         const tasks = [];
@@ -39,56 +22,48 @@ export const TasksProvider = ({ children }) => {
           tasks.push({
             id: doc.id,
             ...doc.data(),
+            // id: doc.id,
+            // title: doc.get('title'),
+            // category: doc.get('category'),
+            // status: doc.get('status'),
+            // startTimeData: doc.get('startTime').toDate().toDateString(),
+            // startTimeTime: doc
+            //   .get('startTime')
+            //   .toDate()
+            //   .toLocaleTimeString('en-US'),
+            // place: doc.get('place'),
           })
         );
         setTasks(tasks);
       });
+  }, []);
 
-    return () => {
-      cleanup();
-    };
-  }, [user]);
+  // const addTask = (taskData) => {
+  //   const newTask = {
+  //     title: taskData.title,
+  //     id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()
+  //     category: taskData.category,
+  //     place: taskData.place,
+  //   };
+  //   firebase.firestore().collection('tasks').add(newTask);
+  // };
 
-  const addTask = (taskData) => {
-    const newTask = {
-      title: taskData.title,
-      isDone: false,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    };
-    firebase
-      .firestore()
-      .collection('users')
-      .doc(user.uid)
-      .collection('tasks')
-      .add(newTask);
-  };
+  // const deleteTask = (taskToDeleteId) => {
+  //   firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
+  // };
 
-  const deleteTask = (taskToDeleteId) => {
-    firebase
-      .firestore()
-      .collection('users')
-      .doc(user.uid)
-      .collection('tasks')
-      .doc(taskToDeleteId)
-      .delete();
-  };
-
-  const updateTask = (taskId, taskData) => {
-    firebase
-      .firestore()
-      .collection('users')
-      .doc(user.uid)
-      .collection('tasks')
-      .doc(taskId)
-      .update(taskData);
-  };
+  // const updateTask = (taskId, taskData) => {
+  //   firebase.firestore().collection('tasks').doc(taskId).update(taskData);
+  // };
 
   const value = {
     tasks: tasks === null ? [] : tasks,
     setTasks,
-    addTask,
-    deleteTask,
-    updateTask,
+    // addTask,
+    // deleteTask,
+    // updateTask,
+    //     selectedFilters,
+    //     setSelectedFilters,
   };
 
   return (

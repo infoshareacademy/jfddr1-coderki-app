@@ -58,19 +58,6 @@ export const TasksList = () => {
         }
       />
       <div>
-        {/* <div style={{ marginTop: 10 }}>
-          <label>Filter by categories: </label>
-          <select name="categories" style={{ fontFamily: 'Quicksand' }}>
-            <option value="placeholder"></option>
-            <option value="education">Education</option>
-            <option value="sport">Sport</option>
-            <option value="duties">House duties</option>
-            <option value="relax">Relax</option>
-            <option value="meeting">Meeting</option>
-            <option value="appointment">Appointment</option>
-            <option value="work">Work</option>
-          </select>
-        </div> */}
         <div style={{ marginTop: 10 }}>
           <label>Filter by status: </label>
           <select name="categories" style={{ fontFamily: 'Quicksand' }}>

@@ -9,7 +9,6 @@ import NewTask from './views/tasks/NewTasksPage';
 import TasksPage from './views/tasks/TasksPage';
 import SettingsPage from './views/settings/SettingsPage';
 import logo from './img/logo.png';
-// import { TasksProvider } from './cTasksContext';
 
 const AppRouter = () => {
   return (
@@ -26,36 +25,34 @@ const AppRouter = () => {
             </Link>
             <AuthPage />
           </Route>
-          <TasksProvider>
-            <Route path="/home">
-              <Header children="Home" />
-              <Menu />
-              <HomePage />
-            </Route>
-            <Route path="/calendar">
-              <Header children="Calendar" />
-              <Menu />
-              <CalendarPage />
-            </Route>
-            <Route path="/addTask">
-              <Header children="Create new task" />
-              <NewTask />
-            </Route>
-            <Route path="/tasks">
-              <Header children="Tasks" />
-              <Menu />
-              <TasksPage />
-            </Route>
-            <Route path="/settings">
-              <Header children="Settings" />
-              <Menu />
-              <SettingsPage />
-            </Route>
-            <Route path="/">
-              <Menu />
-              <HomePage />
-            </Route>
-          </TasksProvider>
+          <Route path="/home">
+            <Header children="Home" />
+            <Menu />
+            <HomePage />
+          </Route>
+          <Route path="/calendar">
+            <Header children="Calendar" />
+            <Menu />
+            <CalendarPage />
+          </Route>
+          <Route path="/addTask">
+            <Header children="Create new task" />
+            <NewTask />
+          </Route>
+          <Route path="/tasks">
+            <Header children="Tasks" />
+            <Menu />
+            <TasksPage />
+          </Route>
+          <Route path="/settings">
+            <Header children="Settings" />
+            <Menu />
+            <SettingsPage />
+          </Route>
+          <Route path="/">
+            <Menu />
+            <HomePage />
+          </Route>
         </Switch>
       </div>
     </BrowserRouter>
