@@ -18,22 +18,18 @@ export const TasksProvider = ({ children }) => {
       .collection('tasks')
       .onSnapshot((snapshot) => {
         const tasks = [];
-        snapshot.forEach((doc) =>
+        snapshot.forEach((doc) => {
           tasks.push({
             id: doc.id,
-            ...doc.data(),
-            // id: doc.id,
-            // title: doc.get('title'),
-            // category: doc.get('category'),
-            // status: doc.get('status'),
-            // startTimeData: doc.get('startTime').toDate().toDateString(),
-            // startTimeTime: doc
-            //   .get('startTime')
-            //   .toDate()
-            //   .toLocaleTimeString('en-US'),
-            // place: doc.get('place'),
-          })
-        );
+            title: doc.get('title') || '',
+            category: doc.get('category') || '',
+            status: doc.get('status') || '',
+            startTimeData: doc.get('startTime')?.toDate().toDateString() || '',
+            startTimeTime:
+              doc.get('startTime')?.toDate().toLocaleTimeString('en-US') || '',
+            place: doc.get('place') || '',
+          });
+        });
         setTasks(tasks);
       });
   }, []);
