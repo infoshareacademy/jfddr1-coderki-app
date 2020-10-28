@@ -24,15 +24,13 @@ export const TasksList = () => {
         snapshot.forEach((doc) => {
           tasks.push({
             id: doc.id,
-            title: doc.get('title'),
-            category: doc.get('category'),
-            status: doc.get('status'),
+            title: doc.get('title') || '',
+            category: doc.get('category') || '',
+            status: doc.get('status') || '',
             startTimeData: doc.get('startTime')?.toDate().toDateString() || '',
-            startTimeTime: doc
-              .get('startTime')
-              .toDate()
-              .toLocaleTimeString('en-US'),
-            place: doc.get('place'),
+            startTimeTime:
+              doc.get('startTime')?.toDate().toLocaleTimeString('en-US') || '',
+            place: doc.get('place') || '',
           });
         });
         setTasks(tasks);
@@ -43,9 +41,10 @@ export const TasksList = () => {
     task.title.toLowerCase().includes(filters.byTitle.toLowerCase())
   );
 
-  const tasksFilteredByCategory = tasksFilteredByTitle.filter((task) =>
-    task.category.toLowerCase().includes(filters.byCategory.toLowerCase())
-  );
+  const tasksFilteredByCategory = tasksFilteredByTitle.filter((task) => {
+    console.log(task);
+    task.category.toLowerCase().includes(filters.byCategory.toLowerCase());
+  });
 
   return (
     <div style={{ padding: '10px 5px 5px 5px' }}>
