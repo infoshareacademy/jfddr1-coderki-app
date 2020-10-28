@@ -1,67 +1,56 @@
-import React from 'react';
 // import firebase from 'firebase/app';
-import db from '../../Firebase/firebase';
+import React, { useState, useContext } from 'react';
+import { TasksContext } from '../../TasksContext';
 
-class NewTask extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      place: '',
-      category: '',
-    };
-  }
+let initialState = {
+  title: '',
+  id: '',
+  category: '',
+  place: '',
+};
 
-  updateInput = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+const AddTask = () => {
+  const { addTask } = useContext(TasksContext);
+  const [newTask, setNewTask] = useState(initialState);
+
+  const handleChange = (e) => {
+    setNewTask({ ...newTask, [e.target.name]: e.target.value });
   };
 
-  addTask = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    db.collection('tasks').add({
-      title: this.state.title,
-      place: this.state.place,
-      category: this.state.category,
-    });
-    this.setState({
-      title: '',
-      place: '',
-      category: '',
-    });
+    addTask(newTask);
+    setNewTask(initialState);
   };
 
-  render() {
-    return (
-      <>
-        <h1 style={{ textAlign: 'center' }}>Hello :)</h1>
-        <form onSubmit={this.addTask}>
-          <input
-            type="text"
-            name="title"
-            placeholder="Task name"
-            onChange={this.updateInput}
-            value={this.state.title}
-          />
-          <input
-            type="text"
-            name="place"
-            placeholder="Place"
-            onChange={this.updateInput}
-            value={this.state.place}
-          />
-          <input
-            type="text"
-            name="category"
-            placeholder="Category"
-            onChange={this.updateInput}
-            value={this.state.category}
-          />
-          <button type="submit">CREATE TASK</button>
-        </form>
-      </>
-    );
-  }
-}
-export default NewTask;
+  return (
+    <>
+      <h1 style={{ textAlign: 'center' }}>Add new task to database</h1>
+      <form onSubmit={(event) => handleSubmit(event)}>
+        <input
+          type="text"
+          name="title"
+          placeholder="Task name"
+          value={newTask.title}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="text"
+          name="place"
+          placeholder="Place"
+          value={newTask.place}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="text"
+          name="category"
+          placeholder="Category"
+          value={newTask.category}
+          onChange={(e) => handleChange(e)}
+        />
+        <button type="submit">CREATE TASK</button>
+      </form>
+    </>
+  );
+};
+export default AddTask;

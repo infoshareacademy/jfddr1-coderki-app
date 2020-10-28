@@ -28,10 +28,8 @@ export const TasksList = () => {
             category: doc.get('category'),
             status: doc.get('status'),
             startTimeData: doc.get('startTime')?.toDate().toDateString() || '',
-            startTimeTime: doc
-              .get('startTime')
-              .toDate()
-              .toLocaleTimeString('en-US'),
+            startTimeTime:
+              doc.get('startTime')?.toDate().toLocaleTimeString('en-US') || '',
             place: doc.get('place'),
           });
         });
