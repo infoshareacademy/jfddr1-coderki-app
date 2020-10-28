@@ -22,7 +22,7 @@ const FiltersContainer = () => {
         </div>
         <div style={{ marginTop: 10 }}>
           <label>Filter by status: </label>
-          <select name="categories" style={{ fontFamily: 'Quicksand' }}>
+          <select name="status" style={{ fontFamily: 'Quicksand' }}>
             <option value="placeholder"></option>
             <option value="all">All</option>
             <option value="open">Open</option>

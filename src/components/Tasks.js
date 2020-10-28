@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './TaskContainer.module.css';
+import styles from './Task.module.css';
 import dots from '../img/horizontal-dots.svg';
 
-export const TaskContainer = ({ tasks }) => {
+export const Tasks = ({ tasks }) => {
   return (
     <div style={{ paddingTop: 15 }}>
-      {tasks.map((task, index) => (
+      {tasks.map((task) => (
         <>
           <div className={styles.mainContainer}>
             <div className={styles.textContainer}>

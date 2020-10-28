@@ -19,6 +19,7 @@ export const TasksProvider = ({ children }) => {
       .onSnapshot((snapshot) => {
         const tasks = [];
         snapshot.forEach((doc) => {
+          console.log(doc.id);
           tasks.push({
             id: doc.id,
             title: doc.get('title') || '',
