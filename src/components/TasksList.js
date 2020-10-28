@@ -1,41 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 // import styles from './TaskContainer.module.css';
 import { TaskContainer } from './TaskContainer';
 import styles from './TasksList.module.css';
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
 import FilterInput from './FilterInput';
 import CategoryFilter from './CategoryFilter';
+import { TasksContext } from '../TasksContext';
 
 export const TasksList = () => {
-  const [tasks, setTasks] = useState([]);
+  const { tasks } = useContext(TasksContext);
   const [filters, setFilters] = useState({
     byTitle: '',
     byCategory: '',
   });
-
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection('tasks')
-      .onSnapshot((snapshot) => {
-        const tasks = [];
-
-        snapshot.forEach((doc) => {
-          tasks.push({
-            id: doc.id,
-            title: doc.get('title') || '',
-            category: doc.get('category') || '',
-            status: doc.get('status') || '',
-            startTimeData: doc.get('startTime')?.toDate().toDateString() || '',
-            startTimeTime:
-              doc.get('startTime')?.toDate().toLocaleTimeString('en-US') || '',
-            place: doc.get('place') || '',
-          });
-        });
-        setTasks(tasks);
-      });
-  }, []);
 
   const tasksFilteredByTitle = tasks.filter((task) =>
     task.title.toLowerCase().includes(filters.byTitle.toLowerCase())
