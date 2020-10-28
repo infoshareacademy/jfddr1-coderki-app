@@ -27,7 +27,7 @@ export const TasksList = () => {
             title: doc.get('title'),
             category: doc.get('category'),
             status: doc.get('status'),
-            startTimeData: doc.get('startTime').toDate().toDateString(),
+            startTimeData: doc.get('startTime')?.toDate().toDateString() || '',
             startTimeTime: doc
               .get('startTime')
               .toDate()
