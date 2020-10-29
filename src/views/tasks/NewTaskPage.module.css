@@ -1,14 +1,15 @@
 .container {
-  padding: 16px;
+  padding: 20px;
   border-radius: 10px;
   background: #ffffff;
   width: 80%;
   margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: 85px;
+  margin-top: 20px;
+  margin-bottom: 90px;
 }
 h1 {
   text-align: center;
+  font-size: 1.5rem;
 }
 .buttonContainer {
   display: flex;
@@ -20,16 +21,16 @@ h1 {
   justify-content: space-between;
   gap: 5%;
 }
-.members-radiobutton {
+/* .members-radiobutton {
   display: inline-block;
   opacity: 0;
   background: green;
 }
 .members-radiobutton:hover {
   background: red;
-  color: pink;
-}
+  color: pink; */
 
 .description {
-  padding: 20%;
+  padding: 20px;
+  height: 100px;
 }

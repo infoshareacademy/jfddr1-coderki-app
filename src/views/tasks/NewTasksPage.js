@@ -30,46 +30,47 @@ const AddTask = () => {
 
   return (
     <>
-      <h1> Create new task</h1>
-      <form onSubmit={(event) => handleSubmit(event)}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          value={newTask.title}
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="text"
-          name="place"
-          placeholder="Place"
-          value={newTask.place}
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="text"
-          name="category"
-          placeholder="Category"
-          value={newTask.category}
-          onChange={(e) => handleChange(e)}
-        />
-        <div className={styles.inputContainer}>
+      <div className={styles.container}>
+        <h1> Add task details</h1>
+        <form onSubmit={(event) => handleSubmit(event)}>
           <input
-            name="start"
-            placeholder="Start"
-            type="date"
-            //value={newTask.start}
-            // onChange={(e) => handleChange(e)}
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={newTask.title}
+            onChange={(e) => handleChange(e)}
           />
           <input
-            name="end"
-            placeholder="End"
-            type="date"
-            // value={newTask.end}
-            // onChange={(e) => handleChange(e)}
+            type="text"
+            name="place"
+            placeholder="Place"
+            value={newTask.place}
+            onChange={(e) => handleChange(e)}
           />
-        </div>
-        {/* <div className={styles.buttonContainer}>
+          <input
+            type="text"
+            name="category"
+            placeholder="Category"
+            value={newTask.category}
+            onChange={(e) => handleChange(e)}
+          />
+          <div className={styles.inputContainer}>
+            <input
+              name="start"
+              placeholder="Start"
+              type="date"
+              //value={newTask.start}
+              // onChange={(e) => handleChange(e)}
+            />
+            <input
+              name="end"
+              placeholder="End"
+              type="date"
+              // value={newTask.end}
+              // onChange={(e) => handleChange(e)}
+            />
+          </div>
+          {/* <div className={styles.buttonContainer}>
           <p>Add members:</p>
           <input
             class="members-radiobutton"
@@ -97,59 +98,38 @@ const AddTask = () => {
           Kiddo
         </div> */}
 
-        <p>Task description</p>
-        <input
-          class="description"
-          name="description"
-          type="text"
-          //value={newTask.decription}
-          // onChange={(e) => handleChange(e)}
-        />
-        <div className={styles.buttonContainer}>
-          <button
-            name="reminder"
-            type="submit"
+          <p>Task description</p>
+          <input
+            className={styles.description}
+            name="description"
+            type="text"
+            //value={newTask.description}
             // onChange={(e) => handleChange(e)}
-            // value={newTask.reminder}
-          >
-            Reminder
-          </button>
-          <button
-            name="repeat"
-            type="submit"
-            // onChange={(e) => handleChange(e)}
-            // value={newTask.repeat}
-          >
-            Repeat
-          </button>
-        </div>
+          />
+          <div className={styles.buttonContainer}>
+            <button
+              name="reminder"
+              type="submit"
+              // onChange={(e) => handleChange(e)}
+              // value={newTask.reminder}
+            >
+              Reminder
+            </button>
+            <button
+              name="repeat"
+              type="submit"
+              // onChange={(e) => handleChange(e)}
+              // value={newTask.repeat}
+            >
+              Repeat
+            </button>
+          </div>
 
-        <button type="submit">Save task</button>
-      </form>
-      <a href="#">Back to home page</a>
+          <button type="submit">Save task</button>
+        </form>
+      </div>
     </>
   );
 };
+
 export default AddTask;
-
-//
-
-//
-//         <button
-//           name="sport"
-//           type="submit"
-//           // onClick=
-//           // value=
-//         >
-//           Sport
-//         </button>
-
-//         <button
-//           name="relax"
-//           type="submit"
-//           // onClick=
-//           // value=
-//         >
-//           Relax
-//         </button>
-//

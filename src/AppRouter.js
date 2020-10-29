@@ -38,6 +38,7 @@ const AppRouter = () => {
           <Route path="/addTask">
             <Header children="Create new task" />
             <AddTask />
+            <Menu />
           </Route>
           <Route path="/tasks">
             <Header children="Tasks" />
@@ -46,8 +47,8 @@ const AppRouter = () => {
           </Route>
           <Route path="/settings">
             <Header children="Settings" />
-            <Menu />
             <SettingsPage />
+            <Menu />
           </Route>
           <Route path="/">
             <Menu />
