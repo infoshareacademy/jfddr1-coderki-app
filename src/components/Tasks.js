@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from './Task.module.css';
 import dots from '../img/horizontal-dots.svg';
-import { TasksContext } from '../TasksContext';
 
 export const Tasks = ({ tasks }) => {
-  const { tasks } = useContext(TasksContext);
-
   return (
     <div style={{ paddingTop: 15 }}>
       {tasks.map((task) => (
