@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Footer from '../../components/Footer';
+import Footer from './components/Footer';
 import styles from './AuthPage.module.css';
 
 const AuthPage = () => {

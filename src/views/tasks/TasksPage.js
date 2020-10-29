@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import styles from './components/FilterInput.module.css';
 import { TasksContext } from '../../TasksContext';
 import { Tasks } from '../../components/Tasks';
 
