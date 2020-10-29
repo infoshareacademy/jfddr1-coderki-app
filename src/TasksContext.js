@@ -34,15 +34,15 @@ export const TasksProvider = ({ children }) => {
       });
   }, []);
 
-  // const addTask = (taskData) => {
-  //   const newTask = {
-  //     title: taskData.title,
-  //     id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()
-  //     category: taskData.category,
-  //     place: taskData.place,
-  //   };
-  //   firebase.firestore().collection('tasks').add(newTask);
-  // };
+  const addTask = (taskData) => {
+    const newTask = {
+      title: taskData.title,
+      id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()
+      category: taskData.category,
+      place: taskData.place,
+    };
+    firebase.firestore().collection('tasks').add(newTask);
+  };
 
   // const deleteTask = (taskToDeleteId) => {
   //   firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
@@ -55,7 +55,7 @@ export const TasksProvider = ({ children }) => {
   const value = {
     tasks: tasks === null ? [] : tasks,
     setTasks,
-    // addTask,
+    addTask,
     // deleteTask,
     // updateTask,
     //     selectedFilters,

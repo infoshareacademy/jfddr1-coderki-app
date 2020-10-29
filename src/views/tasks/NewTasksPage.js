@@ -1,4 +1,3 @@
-// import firebase from 'firebase/app';
 import React, { useState, useContext } from 'react';
 import { TasksContext } from '../../TasksContext';
 
