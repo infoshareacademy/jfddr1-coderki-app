@@ -13,8 +13,6 @@ export const Tasks = ({ tasks }) => {
                 {task.startTimeData}
                 <span style={{ marginLeft: 15 }}>{task.startTimeTime}</span>
               </p>
-              {/* <p className={styles.smallerText}>{task.id}</p> */}
-              {/* <p className={styles.titleText}>{task.task_title}</p> */}
               <p className={styles.titleText}>{task.title}</p>
               <p className={styles.smallerText}>{task.place}</p>
             </div>
