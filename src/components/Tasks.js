@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './TaskContainer.module.css';
+import styles from './Task.module.css';
 import dots from '../img/horizontal-dots.svg';
 
-export const TaskContainer = ({ tasks }) => {
+export const Tasks = ({ tasks }) => {
   return (
     <div style={{ paddingTop: 15 }}>
-      {tasks.map((task, index) => (
+      {tasks.map((task) => (
         <>
           <div className={styles.mainContainer}>
             <div className={styles.textContainer}>
@@ -13,8 +13,6 @@ export const TaskContainer = ({ tasks }) => {
                 {task.startTimeData}
                 <span style={{ marginLeft: 15 }}>{task.startTimeTime}</span>
               </p>
-              {/* <p className={styles.smallerText}>{task.id}</p> */}
-              {/* <p className={styles.titleText}>{task.task_title}</p> */}
               <p className={styles.titleText}>{task.title}</p>
               <p className={styles.smallerText}>{task.place}</p>
             </div>

@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { TasksProvider } from './TasksContext';
+import './Firebase/firebase';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TasksProvider>
+      <App />
+    </TasksProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

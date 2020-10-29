@@ -1,180 +1,155 @@
-import React from 'react';
-// import firebase from 'firebase/app';
-import db from '../../Firebase/firebase';
+import React, { useState, useContext } from 'react';
+import { TasksContext } from '../../TasksContext';
 import styles from './NewTaskPage.module.css';
 
-const NewTasksPage = () => {
+let initialState = {
+  title: '',
+  id: '',
+  category: '',
+  place: '',
+  // start: '',
+  // end: '',
+  // decription: '',
+  // remind: false,
+  // repeat: false
+};
+
+const AddTask = () => {
+  const { addTask } = useContext(TasksContext);
+  const [newTask, setNewTask] = useState(initialState);
+
+  const handleChange = (e) => {
+    setNewTask({ ...newTask, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addTask(newTask);
+    setNewTask(initialState);
+  };
+
   return (
-    <div>
-      <h1> Create new task </h1>
-      <form>
+    <>
+      <h1> Create new task</h1>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <input
-          name="title"
-          // onChange={(e) => setNewTask('title', e.target.value)}
-          placeholder="Title"
           type="text"
-          // value={title}
+          name="title"
+          placeholder="Title"
+          value={newTask.title}
+          onChange={(e) => handleChange(e)}
         />
         <input
-          name="place"
-          // onChange={(e) => setNewTask('title', e.target.value)}
-          placeholder="Place"
           type="text"
-          // value={place}
+          name="place"
+          placeholder="Place"
+          value={newTask.place}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="text"
+          name="category"
+          placeholder="Category"
+          value={newTask.category}
+          onChange={(e) => handleChange(e)}
         />
         <div className={styles.inputContainer}>
           <input
             name="start"
-            // onChange={(e) => setNewTask('title', e.target.value)}
             placeholder="Start"
             type="date"
-            // value={start}
+            //value={newTask.start}
+            // onChange={(e) => handleChange(e)}
           />
           <input
             name="end"
-            // onChange={(e) => setNewTask('title', e.target.value)}
             placeholder="End"
             type="date"
-            // value={end}
-          />{' '}
+            // value={newTask.end}
+            // onChange={(e) => handleChange(e)}
+          />
         </div>
-        <p>Add members:</p>
-        <input
-          class="members-radiobutton"
-          type="radio"
-          name="members"
-          value="mommy"
-        />{' '}
-        Mommy
-        <input
-          class="members-radiobutton"
-          type="radio"
-          name="members"
-          value="daddy"
-        />{' '}
-        Daddy
-        <input
-          class="members-radiobutton"
-          type="radio"
-          name="members"
-          value="child"
-        />{' '}
-        Kiddo
-        <button>Work</button>
-        <button
-          name="sport"
-          type="submit"
-          // onClick={() => setSettings('familyRole', 'parent')}
-          // value={repeat}
-        >
-          Sport
-        </button>
-        <button
-          name="relax"
-          type="submit"
-          // onClick={() => setSettings('familyRole', 'parent')}
-          // value={repeat}
-        >
-          Relax
-        </button>
+        {/* <div className={styles.buttonContainer}>
+          <p>Add members:</p>
+          <input
+            class="members-radiobutton"
+            type="radio"
+            name="members"
+            //value={newTask.member}
+            // onChange={(e) => handleChange(e)}
+          />{' '}
+          Mommy
+          <input
+            class="members-radiobutton"
+            type="radio"
+            name="members"
+            //value={newTask.member}
+            // onChange={(e) => handleChange(e)}
+          />{' '}
+          Daddy
+          <input
+            class="members-radiobutton"
+            type="radio"
+            name="members"
+            //value={newTask.member}
+            // onChange={(e) => handleChange(e)}
+          />{' '}
+          Kiddo
+        </div> */}
+
         <p>Task description</p>
         <input
           class="description"
           name="description"
           type="text"
-          // onClick={() => setSettings('familyRole', 'parent')}
-          // value={repeat}/
+          //value={newTask.decription}
+          // onChange={(e) => handleChange(e)}
         />
         <div className={styles.buttonContainer}>
           <button
             name="reminder"
             type="submit"
-            // onClick={() => setSettings('familyRole', 'parent')}
-            // value={reminder}
+            // onChange={(e) => handleChange(e)}
+            // value={newTask.reminder}
           >
             Reminder
           </button>
           <button
             name="repeat"
             type="submit"
-            // onClick={() => setSettings('familyRole', 'parent')}
-            // value={repeat}
+            // onChange={(e) => handleChange(e)}
+            // value={newTask.repeat}
           >
             Repeat
           </button>
         </div>
-        <button type="submit"> Save task</button>
+
+        <button type="submit">Save task</button>
       </form>
-    </div>
+      <a href="#">Back to home page</a>
+    </>
   );
 };
+export default AddTask;
 
-export default NewTasksPage;
+//
 
-// import React from 'react';
-// // import firebase from 'firebase/app';
-// import db from '../../Firebase/firebase';
+//
+//         <button
+//           name="sport"
+//           type="submit"
+//           // onClick=
+//           // value=
+//         >
+//           Sport
+//         </button>
 
-// class NewTask extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       title: '',
-//       place: '',
-//       category: '',
-//     };
-//   }
-
-//   updateInput = (e) => {
-//     this.setState({
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   addTask = (e) => {
-//     e.preventDefault();
-//     db.collection('tasks').add({
-//       title: this.state.title,
-//       place: this.state.place,
-//       category: this.state.category,
-//     });
-//     this.setState({
-//       title: '',
-//       place: '',
-//       category: '',
-//     });
-//   };
-
-//   render() {
-//     return (
-//       <>
-//         <h1 style={{ textAlign: 'center' }}>Hello :)</h1>
-//         <form onSubmit={this.addTask}>
-//           <input
-//             type="text"
-//             name="title"
-//             placeholder="Task name"
-//             onChange={this.updateInput}
-//             value={this.state.title}
-//           />
-//           <input
-//             type="text"
-//             name="place"
-//             placeholder="Place"
-//             onChange={this.updateInput}
-//             value={this.state.place}
-//           />
-//           <input
-//             type="text"
-//             name="category"
-//             placeholder="Category"
-//             onChange={this.updateInput}
-//             value={this.state.category}
-//           />
-//           <button type="submit">CREATE TASK</button>
-//         </form>
-//       </>
-//     );
-//   }
-// }
-// export default NewTask;
+//         <button
+//           name="relax"
+//           type="submit"
+//           // onClick=
+//           // value=
+//         >
+//           Relax
+//         </button>
+//
