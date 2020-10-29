@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 // import styles from './TaskContainer.module.css';
 import { Tasks } from './Tasks';
+import { TasksContext } from '../TasksContext';
 
-const TaskList = ({ tasks }) => {
+const TaskList = () => {
+  const { tasks } = useContext(TasksContext);
   const tasksToDisplay = tasks;
 
   return (
