@@ -1,0 +1,35 @@
+.container {
+  padding: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 85px;
+}
+h1 {
+  text-align: center;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 3%;
+}
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+.members-radiobutton {
+  display: inline-block;
+  opacity: 0;
+  background: green;
+}
+.members-radiobutton:hover {
+  background: red;
+  color: pink;
+}
+
+.description {
+  padding: 20%;
+}
