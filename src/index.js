@@ -5,11 +5,14 @@ import * as serviceWorker from './serviceWorker';
 import { TasksProvider } from './TasksContext';
 import './Firebase/firebase';
 import Root from './views/Root/Root';
+import AuthGuard from './views/AuthGuard.js/AuthGuard';
 
 ReactDOM.render(
   <React.StrictMode>
     <TasksProvider>
-      <Root />
+      <AuthGuard>
+        <Root />
+      </AuthGuard>
     </TasksProvider>
   </React.StrictMode>,
   document.getElementById('root')

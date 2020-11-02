@@ -37,3 +37,25 @@ function AuthGuard({ children }) {
 }
 
 export default AuthGuard;
+
+// import { useHistory } from 'react-router-dom';
+
+// function HomeButton() {
+//   let history = useHistory();
+
+//   function handleClick() {
+//     history.push('/home');
+//   }
+
+//   return (
+//     <button type="button" onClick={handleClick}>
+//       Go home
+//     </button>
+//   );
+// }
+
+{
+  /* <Route exact path="/">
+  {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
+</Route>; */
+}
