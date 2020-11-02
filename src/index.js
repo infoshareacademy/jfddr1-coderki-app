@@ -5,11 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { TasksProvider } from './TasksContext';
 import './Firebase/firebase';
+import Root from './views/Root/Root';
 
 ReactDOM.render(
   <React.StrictMode>
     <TasksProvider>
-      <App />
+      <Root />
     </TasksProvider>
   </React.StrictMode>,
   document.getElementById('root')
