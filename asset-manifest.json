@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/jfddr1-coderki-app/static/css/main.2d69a623.chunk.css",
-    "main.js": "/jfddr1-coderki-app/static/js/main.65c5db70.chunk.js",
-    "main.js.map": "/jfddr1-coderki-app/static/js/main.65c5db70.chunk.js.map",
+    "main.css": "/jfddr1-coderki-app/static/css/main.29178a56.chunk.css",
+    "main.js": "/jfddr1-coderki-app/static/js/main.02164514.chunk.js",
+    "main.js.map": "/jfddr1-coderki-app/static/js/main.02164514.chunk.js.map",
     "runtime-main.js": "/jfddr1-coderki-app/static/js/runtime-main.c34a3d54.js",
     "runtime-main.js.map": "/jfddr1-coderki-app/static/js/runtime-main.c34a3d54.js.map",
-    "static/js/2.6aede436.chunk.js": "/jfddr1-coderki-app/static/js/2.6aede436.chunk.js",
-    "static/js/2.6aede436.chunk.js.map": "/jfddr1-coderki-app/static/js/2.6aede436.chunk.js.map",
+    "static/js/2.1d7fb3d4.chunk.js": "/jfddr1-coderki-app/static/js/2.1d7fb3d4.chunk.js",
+    "static/js/2.1d7fb3d4.chunk.js.map": "/jfddr1-coderki-app/static/js/2.1d7fb3d4.chunk.js.map",
     "index.html": "/jfddr1-coderki-app/index.html",
-    "precache-manifest.9172acea5639f9a61aa453fa6e0fbb5e.js": "/jfddr1-coderki-app/precache-manifest.9172acea5639f9a61aa453fa6e0fbb5e.js",
+    "precache-manifest.5042b0b081ee1296933bc7a402bb4c9b.js": "/jfddr1-coderki-app/precache-manifest.5042b0b081ee1296933bc7a402bb4c9b.js",
     "service-worker.js": "/jfddr1-coderki-app/service-worker.js",
-    "static/css/main.2d69a623.chunk.css.map": "/jfddr1-coderki-app/static/css/main.2d69a623.chunk.css.map",
-    "static/js/2.6aede436.chunk.js.LICENSE.txt": "/jfddr1-coderki-app/static/js/2.6aede436.chunk.js.LICENSE.txt",
+    "static/css/main.29178a56.chunk.css.map": "/jfddr1-coderki-app/static/css/main.29178a56.chunk.css.map",
+    "static/js/2.1d7fb3d4.chunk.js.LICENSE.txt": "/jfddr1-coderki-app/static/js/2.1d7fb3d4.chunk.js.LICENSE.txt",
     "static/media/calendar.svg": "/jfddr1-coderki-app/static/media/calendar.b4cb4ea7.svg",
     "static/media/checkbox.svg": "/jfddr1-coderki-app/static/media/checkbox.d9b70962.svg",
     "static/media/home.svg": "/jfddr1-coderki-app/static/media/home.261cde57.svg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c34a3d54.js",
-    "static/js/2.6aede436.chunk.js",
-    "static/css/main.2d69a623.chunk.css",
-    "static/js/main.65c5db70.chunk.js"
+    "static/js/2.1d7fb3d4.chunk.js",
+    "static/css/main.29178a56.chunk.css",
+    "static/js/main.02164514.chunk.js"
   ]
 }
