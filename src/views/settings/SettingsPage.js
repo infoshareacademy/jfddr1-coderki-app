@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AccountInfo } from './components/AccountInfo';
 import { MainSettings } from './components/MainSettings';
 import { TaskSettings } from './components/TaskSettings';
 import styles from './SettingsPage.module.css';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const initialState = {
   userName: '',
   familyRole: '',
-  selectedFile: '',
+  // selectedFile: '',
   taskCategory: '',
-  taskCategoryColour: '',
+  taskCategoryColor: '',
   privateOrPublic: '',
   emailNotifications: '',
   // localtimezone??
@@ -29,9 +31,29 @@ const SettingsPage = () => {
     });
   };
 
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection('settings')
+      .onSnapshot((snapshot) => {
+        const settings = [];
+        snapshot.forEach((doc) => {
+          settings.push({
+            userName: doc.get('userName') || '',
+            familyRole: doc.get('familyRole') || '',
+            taskCategory: doc.get('taskCategory') || '',
+            taskCategoryColor: doc.get('taskCategoryColor') || '',
+            privateOrPublic: doc.get('privateOrPublic') || '',
+            emailNotifications: doc.get('emailNotifications') || '',
+          });
+        });
+        setSettings(settings);
+      });
+  }, []);
+
   const handleSubmit = () => {
     // make request to firebase
-    console.log('settings:', settings);
+    firebase.firestore().collection('settings').add(setSettings);
   };
 
   return (
@@ -40,12 +62,12 @@ const SettingsPage = () => {
         userName={settings.userName}
         setSettings={handleSetSettings}
         familyRole={settings.familyRole}
-        selectedFile={settings.selectedFile}
+        // selectedFile={settings.selectedFile}
       />
       <TaskSettings
         taskCategory={settings.taskCategory}
         setSettings={handleSetSettings}
-        taskCategoryColour={settings.taskCategoryColour}
+        taskCategoryColor={settings.taskCategoryColor}
       />
       <MainSettings
         privateOrPublic={settings.privateOrPublic}
