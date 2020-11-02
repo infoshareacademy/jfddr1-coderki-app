@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './TaskSettings.module.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -8,6 +9,12 @@ export const MainSettings = ({
   emailNotifications,
   setSettings,
 }) => {
+  let history = useHistory();
+
+  function handleClick() {
+    firebase.auth().signOut();
+    history.push('/home');
+  }
   return (
     <div>
       <h1 className={styles.header}>Main settings: </h1>
@@ -59,7 +66,7 @@ export const MainSettings = ({
       <h2 className={styles.subheader}>Change your password</h2>
       <button>Click to change password</button>
       <h2 className={styles.subheader}>Log out</h2>
-      <button onClick={() => firebase.auth().signOut()}>Sign out</button>
+      <button onClick={handleClick}>Sign out</button>
       <h2 className={styles.subheader}>About us</h2>
       <h2 className={styles.subheader}>Privacy Policy</h2>
     </div>
