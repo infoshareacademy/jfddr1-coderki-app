@@ -10,7 +10,6 @@ import settings from '../img/settings.svg';
 const Menu = () => {
   return (
     <nav className={styles.menu}>
-      <NavLink to="/auth">Auth</NavLink>
       <NavLink to="/home">
         <img
           src={home}

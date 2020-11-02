@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { TasksProvider } from './TasksContext';
 import './Firebase/firebase';
+import Root from './views/Root/Root';
+import AuthGuard from './views/AuthGuard.js/AuthGuard';
 
 ReactDOM.render(
   <React.StrictMode>
     <TasksProvider>
-      <App />
+      <AuthGuard>
+        <Root />
+      </AuthGuard>
     </TasksProvider>
   </React.StrictMode>,
   document.getElementById('root')
