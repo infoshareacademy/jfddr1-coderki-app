@@ -7,11 +7,11 @@ let initialState = {
   id: '',
   category: '',
   place: '',
-  // start: '',
-  // end: '',
-  // decription: '',
-  // remind: false,
-  // repeat: false
+  startTime: '',
+  endTime: '',
+  decription: '',
+  remind: false,
+  repeat: false,
 };
 
 const AddTask = () => {
@@ -56,18 +56,18 @@ const AddTask = () => {
           />
           <div className={styles.inputContainer}>
             <input
-              name="start"
+              name="startTime"
               placeholder="Start"
               type="date"
-              //value={newTask.start}
-              // onChange={(e) => handleChange(e)}
+              value={newTask.startTime}
+              onChange={(e) => handleChange(e)}
             />
             <input
-              name="end"
+              name="endTime"
               placeholder="End"
               type="date"
-              // value={newTask.end}
-              // onChange={(e) => handleChange(e)}
+              value={newTask.endTime}
+              onChange={(e) => handleChange(e)}
             />
           </div>
           {/* <div className={styles.buttonContainer}>
@@ -103,23 +103,23 @@ const AddTask = () => {
             className={styles.description}
             name="description"
             type="text"
-            //value={newTask.description}
-            // onChange={(e) => handleChange(e)}
+            value={newTask.description}
+            onChange={(e) => handleChange(e)}
           />
           <div className={styles.buttonContainer}>
             <button
               name="reminder"
               type="submit"
-              // onChange={(e) => handleChange(e)}
-              // value={newTask.reminder}
+              onChange={(e) => handleChange(e)}
+              value={newTask.reminder}
             >
               Reminder
             </button>
             <button
               name="repeat"
               type="submit"
-              // onChange={(e) => handleChange(e)}
-              // value={newTask.repeat}
+              onChange={(e) => handleChange(e)}
+              value={newTask.repeat}
             >
               Repeat
             </button>

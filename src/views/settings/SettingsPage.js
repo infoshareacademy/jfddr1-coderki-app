@@ -53,7 +53,7 @@ const SettingsPage = () => {
 
   const handleSubmit = () => {
     // make request to firebase
-    firebase.firestore().collection('settings').add(setSettings);
+    firebase.firestore().collection('settings').add(settings);
   };
 
   return (
