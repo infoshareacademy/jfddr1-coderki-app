@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import firebase from 'firebase/app';
+import SignInForm from '../SignInForm.js/SignInForm';
+
 import 'firebase/auth';
 
 const initialState = {
@@ -8,6 +10,8 @@ const initialState = {
 };
 
 function SignUpForm() {
+  const [showSignUpForm, setShowSignUpForm] = useState(true);
+
   const [formState, setFormState] = useState(initialState);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,40 +27,49 @@ function SignUpForm() {
   };
 
   return (
-    <div
-      style={{
-        border: '1px solid black',
-        padding: 10,
-        margin: 10,
-        borderRadius: 5,
-      }}
-    >
-      <form onSubmit={handleSubmit}>
-        {' '}
-        <h2>Sign up</h2>
-        <label htmlFor="email">Email </label>
-        <input
-          id="email"
-          name="email"
-          autoComplete="current-email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <label htmlFor="password">Password </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          autoComplete="current-password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <button>Sign up</button>
-      </form>
+    <div>
+      {showSignUpForm ? (
+        <form onSubmit={handleSubmit}>
+          {' '}
+          <label htmlFor="email">Email </label>
+          <input
+            id="email"
+            name="email"
+            autoComplete="current-email"
+            value={formState.email}
+            onChange={handleChange}
+            placeholder="Enter Email"
+          />
+          <br />
+          <label htmlFor="password">Password </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autoComplete="current-password"
+            value={formState.password}
+            onChange={handleChange}
+            placeholder="Enter Password"
+          />
+          <br />
+          <button>Sign up</button>
+          <div style={{ textAlign: 'center' }}>
+            <p>
+              Already have an account?{' '}
+              <a
+                href="#"
+                style={{ color: 'dodgerblue' }}
+                onClick={() => setShowSignUpForm(!showSignUpForm)}
+              >
+                Sign in
+              </a>
+              .
+            </p>
+          </div>
+        </form>
+      ) : (
+        <SignInForm />
+      )}
     </div>
   );
 }

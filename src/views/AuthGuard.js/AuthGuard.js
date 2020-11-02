@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import SignUpForm from '../SignUpForm.js/SignUpForm';
 import SignInForm from '../SignInForm.js/SignInForm';
+import Footer from './components/Footer';
+import logo from '../../img/logo.png';
+import styles from './AuthGuard.module.css';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const Cover = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <SignInForm />
-
-      <SignUpForm />
-    </div>
+    <>
+      <img
+        src={logo}
+        style={{ width: '100%', borderRadius: 10, paddingBottom: 30 }}
+        alt="Logo"
+      />
+      <div className={styles.container}>
+        <SignInForm />
+      </div>
+      <Footer />
+    </>
   );
 };
 

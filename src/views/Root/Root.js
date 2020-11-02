@@ -1,12 +1,11 @@
 import React from 'react';
 import AuthGuard from '../AuthGuard.js/AuthGuard';
-import App from '../../App';
-import Footer from '../Root/components/Footer';
+import AppRouter from '../../AppRouter';
 
 function Root() {
   return (
     <AuthGuard>
-      <App />
+      <AppRouter />
     </AuthGuard>
   );
 }
