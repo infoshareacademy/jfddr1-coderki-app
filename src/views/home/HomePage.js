@@ -1,14 +1,13 @@
 import React from 'react';
-import TasksList from '../../components/TasksList';
+import { Tasks } from '../../components/Tasks';
 
 const HomePage = () => {
   return (
     <>
       {/* <Header /> */}
-      <TasksList />
+      <Tasks />
     </>
   );
 };
 
 export default HomePage;
-//
