@@ -5,13 +5,9 @@ import 'firebase/firestore';
 export const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
-  const [tasks, setTasks] = useState(null);
-  //   const [selectedFilters, setSelectedFilters] = useState(['one', 'two'])
+  const [tasks, setTasks] = useState([]);
+  const [activeTags, setActiveTags] = useState([]);
 
-  //   useEffect(() => {
-  //     // let's say we call Firebase here, then
-  //     setTasks(['raz', 'dwa', 'trzy']);
-  //   }, []);
   useEffect(() => {
     firebase
       .firestore()
@@ -54,6 +50,18 @@ export const TasksProvider = ({ children }) => {
   //   firebase.firestore().collection('tasks').doc(taskId).update(taskData);
   // };
 
+  const clickedTag = (tag) => {
+    if (!activeTags.includes(tag)) {
+      setActiveTags([...activeTags, tag]);
+    } else {
+      setActiveTags(activeTags.filter((activeTag) => activeTag !== tag));
+    }
+  };
+
+  const clearActiveTags = () => {
+    setActiveTags([]);
+  };
+
   const value = {
     tasks: tasks === null ? [] : tasks,
     setTasks,
@@ -62,6 +70,10 @@ export const TasksProvider = ({ children }) => {
     // updateTask,
     //     selectedFilters,
     //     setSelectedFilters,
+    activeTags,
+    setActiveTags,
+    clickedTag,
+    clearActiveTags,
   };
 
   return (

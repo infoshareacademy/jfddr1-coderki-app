@@ -1,14 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { TasksContext } from '../../TasksContext';
-import { Tasks } from '../../components/Tasks';
+import { Task } from '../../components/Task';
+import ClearFiltersBtn from './components/ClearFiltersBtn';
+import CategoryTagsList from './components/CategoryTagsList';
+// import TaskList from '../../components/TasksList';
 
 const TasksPage = () => {
+  const { tasks, activeTags } = useContext(TasksContext);
+
   const [filtered, setFiltered] = useState([]);
   console.log('tasksfilter', filtered);
+
+  const compareTags = (taskTags, activeTags) => {
+    return activeTags.every((tag) => taskTags.includes(tag));
+  };
   return (
     <div>
       <Filters setFiltered={setFiltered} />
-      <Tasks tasks={filtered} />
+      <CategoryTagsList />
+      <ClearFiltersBtn />
+      {tasks
+        .filter((task) => compareTags(task.category, activeTags))
+        .map((task) => (
+          <Task task={task} />
+        ))}
     </div>
   );
 };
@@ -72,7 +87,7 @@ const Filters = ({ setFiltered }) => {
         </div>
       </div>
       <div>
-        <div style={{ marginTop: 10 }}>
+        {/* <div style={{ marginTop: 10 }}>
           <label>Filter by categories: </label>
           <select
             name="category"
@@ -89,7 +104,7 @@ const Filters = ({ setFiltered }) => {
             <option value="appointment">Appointment</option>
             <option value="work">Work</option>
           </select>
-        </div>
+        </div> */}
         <div style={{ marginTop: 10 }}>
           <label>Filter by status: </label>
           <select

@@ -1,0 +1,15 @@
+.tag {
+  width: 80px;
+  min-height: 30px;
+  font-size: 12px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.activeTag {
+  background-color: #e07286;
+  outline: none;
+  border: none;
+}
