@@ -3,7 +3,7 @@ import styles from './TaskSettings.module.css';
 
 export const TaskSettings = ({
   taskCategory,
-  taskCategoryColour,
+  taskCategoryColor,
   setSettings,
 }) => {
   return (
@@ -18,9 +18,9 @@ export const TaskSettings = ({
           onChange={(e) => setSettings('taskCategory', e.target.value)}
         />
         <input
-          name="taskCategoryColour"
+          name="taskCategoryColor"
           type="color"
-          onClick={(e) => setSettings('taskCategoryColour', e.target.value)}
+          onClick={(e) => setSettings('taskCategoryColor', e.target.value)}
         />
       </div>
     </div>

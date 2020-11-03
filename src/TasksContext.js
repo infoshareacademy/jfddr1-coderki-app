@@ -28,6 +28,7 @@ export const TasksProvider = ({ children }) => {
             startTimeTime:
               doc.get('startTime')?.toDate().toLocaleTimeString('en-US') || '',
             place: doc.get('place') || '',
+            description: doc.get('description') || '',
           });
         });
         setTasks(tasks);
@@ -40,6 +41,7 @@ export const TasksProvider = ({ children }) => {
       id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()
       category: taskData.category,
       place: taskData.place,
+      description: taskData.description,
     };
     firebase.firestore().collection('tasks').add(newTask);
   };
