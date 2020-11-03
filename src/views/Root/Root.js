@@ -1,30 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import AuthPage from './views/auth/AuthPage';
-import Menu from './components/Menu';
-import Header from './components/Header';
-import HomePage from './views/home/HomePage';
-import CalendarPage from './views/calendar/CalendarPage';
-import AddTask from './views/tasks/NewTasksPage';
-import TasksPage from './views/tasks/TasksPage';
-import SettingsPage from './views/settings/SettingsPage';
-import logo from './img/logo.png';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Menu from '../../components/Menu';
+import Header from '../../components/Header';
+import HomePage from '../../views/home/HomePage';
+import CalendarPage from '../../views/calendar/CalendarPage';
+import AddTask from '../../views/tasks/NewTasksPage';
+import TasksPage from '../../views/tasks/TasksPage';
+import SettingsPage from '../../views/settings/SettingsPage';
+import '../../App.css';
 
-const AppRouter = () => {
+function Root() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="App" style={{ height: '100%' }}>
         <Switch>
-          <Route path="/auth">
-            <Link to="/">
-              <img
-                src={logo}
-                style={{ width: '100%', borderRadius: 10, paddingBottom: 30 }}
-                alt="Logo"
-              />
-            </Link>
-            <AuthPage />
-          </Route>
           <Route path="/home">
             <Header children="Home" />
             <Menu />
@@ -58,6 +47,6 @@ const AppRouter = () => {
       </div>
     </BrowserRouter>
   );
-};
+}
 
-export default AppRouter;
+export default Root;

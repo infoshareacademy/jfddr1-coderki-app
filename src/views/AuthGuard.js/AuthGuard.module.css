@@ -35,11 +35,3 @@ input[type='password'] {
   opacity: 0.9;
   border-radius: 10px;
 }
-
-a {
-  color: dodgerblue;
-}
-
-.signin {
-  text-align: center;
-}

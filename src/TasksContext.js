@@ -5,7 +5,33 @@ import 'firebase/firestore';
 export const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
+  const [userUid, setUserUid] = useState(null);
   const [tasks, setTasks] = useState(null);
+  const [settingsData, setSettingsData] = useState({});
+  // console.log('settingsContext', settingsData);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUserUid(user.uid);
+      } else {
+        setUserUid(null);
+      }
+    });
+  }, [userUid]);
+
+  useEffect(() => {
+    if (userUid) {
+      firebase
+        .firestore()
+        .collection('users')
+        .doc(userUid)
+        .onSnapshot((snapshot) => {
+          setSettingsData(snapshot.data());
+        });
+    }
+  }, [userUid]);
+
   //   const [selectedFilters, setSelectedFilters] = useState(['one', 'two'])
 
   //   useEffect(() => {
@@ -28,6 +54,7 @@ export const TasksProvider = ({ children }) => {
             startTimeTime:
               doc.get('startTime')?.toDate().toLocaleTimeString('en-US') || '',
             place: doc.get('place') || '',
+            description: doc.get('description') || '',
           });
         });
         setTasks(tasks);
@@ -40,6 +67,7 @@ export const TasksProvider = ({ children }) => {
       id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()
       category: taskData.category,
       place: taskData.place,
+      description: taskData.description,
     };
     firebase.firestore().collection('tasks').add(newTask);
   };
@@ -56,6 +84,9 @@ export const TasksProvider = ({ children }) => {
     tasks: tasks === null ? [] : tasks,
     setTasks,
     addTask,
+    userUid,
+    settingsData,
+    setSettingsData,
     // deleteTask,
     // updateTask,
     //     selectedFilters,

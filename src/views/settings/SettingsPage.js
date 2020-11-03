@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { AccountInfo } from './components/AccountInfo';
 import { MainSettings } from './components/MainSettings';
 import { TaskSettings } from './components/TaskSettings';
 import styles from './SettingsPage.module.css';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
+import { TasksContext } from '../../TasksContext';
 
 const initialState = {
   userName: '',
   familyRole: '',
-  selectedFile: '',
+  // selectedFile: '',
   taskCategory: '',
-  taskCategoryColour: '',
+  taskCategoryColor: '',
   privateOrPublic: '',
   emailNotifications: '',
   // localtimezone??
@@ -19,7 +22,13 @@ const initialState = {
 };
 
 const SettingsPage = () => {
+  const { userUid, settingsData } = useContext(TasksContext);
   const [settings, setSettings] = useState(initialState);
+  // console.log('settingsForm', settings);
+
+  useEffect(() => {
+    setSettings(settingsData);
+  }, [settingsData]);
 
   const handleSetSettings = (field, value) => {
     // Merge old settings with new value, and set updated state.
@@ -31,7 +40,7 @@ const SettingsPage = () => {
 
   const handleSubmit = () => {
     // make request to firebase
-    console.log('settings:', settings);
+    firebase.firestore().collection('users').doc(userUid).update(settings);
   };
 
   return (
@@ -40,19 +49,21 @@ const SettingsPage = () => {
         userName={settings.userName}
         setSettings={handleSetSettings}
         familyRole={settings.familyRole}
-        selectedFile={settings.selectedFile}
+        // selectedFile={settings.selectedFile}
       />
       <TaskSettings
         taskCategory={settings.taskCategory}
         setSettings={handleSetSettings}
-        taskCategoryColour={settings.taskCategoryColour}
+        taskCategoryColor={settings.taskCategoryColor}
       />
       <MainSettings
         privateOrPublic={settings.privateOrPublic}
         setSettings={handleSetSettings}
         emailNotifications={settings.emailNotifications}
       />
-      <button onClick={handleSubmit}>Save</button>
+      <button className={styles.saveBtn} onClick={handleSubmit}>
+        Save settings
+      </button>
     </div>
   );
 };
