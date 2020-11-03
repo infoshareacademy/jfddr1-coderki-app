@@ -12,36 +12,48 @@ export const Tasks = () => {
   };
 
   return (
-    <div style={{ paddingTop: 15 }}>
+    <div className={styles.wrapper}>
       {tasks.map((task) => (
-        <>
-          <div
-            onClick={() => handleToggle(task.id)}
-            className={styles.mainContainer}
-          >
+        <div className={styles.mainContainer}>
+          <div onClick={() => handleToggle(task.id)}>
             <div className={styles.textContainer}>
               <p className={styles.smallerText}>
                 {task.startTimeData}
                 <span style={{ marginLeft: 15 }}>{task.startTimeTime}</span>
               </p>
               <p className={styles.titleText}>{task.title}</p>
-              <p className={styles.smallerText}>{task.place}</p>
+              <p className={styles.smallerText}>
+                {task.place ? 'Place: ' + task.place : null}
+              </p>
             </div>
-            <div className={styles.iconContainer}>
-              <img
-                src={dots}
-                className={styles.seeMoreIcon}
-                alt="icon with 3 dots"
-              />
-            </div>
+
+            <img
+              src={dots}
+              className={styles.seeMoreIcon}
+              alt="icon with 3 dots"
+            />
           </div>
 
           {task.id === selectedTaskId && (
             <div>
-              <h2>tu są detale</h2>
+              <p className={styles.smallerText}>Status: {task.status}</p>
+              <p className={styles.smallerText}>Category: {task.category}</p>
+              <p className={styles.smallerText}>
+                Description: {task.description}
+              </p>
+              <p className={styles.smallerText}>
+                Assigned to: {task.assignedTo}
+              </p>
+              <p className={styles.smallerText}>
+                End time: {task.startTimeData} {task.endTimeTime}
+              </p>
+              <p className={styles.smallerText}>Reminder: {task.reminder}</p>
+              <p className={styles.smallerText}>Repeate: {task.repeate}</p>
+              <button className={styles.button}>Edit task</button>
+              <button className={styles.button}>Delete task</button>
             </div>
           )}
-        </>
+        </div>
       ))}
     </div>
   );
