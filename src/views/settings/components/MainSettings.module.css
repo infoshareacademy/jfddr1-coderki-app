@@ -1,13 +1,13 @@
 .header {
   font-size: 1.4rem;
-  padding: 30px;
-
+  padding: 10px;
   text-align: center;
-
+}
 .subheader {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .form {
@@ -24,6 +24,7 @@ input {
   border: none;
   background: #ffffff;
   border: 1px solid #c5c5c5;
+  font-size: 1.2;
 }
 
 button {
@@ -42,4 +43,14 @@ button {
 .buttonContainer {
   display: flex;
   justify-content: space-between;
+}
+.container {
+  padding: 16px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  background: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 40px;
 }

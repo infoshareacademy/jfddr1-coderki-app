@@ -8,7 +8,8 @@ export const TasksProvider = ({ children }) => {
   const [userUid, setUserUid] = useState(null);
   const [tasks, setTasks] = useState(null);
   const [settingsData, setSettingsData] = useState({});
-  console.log('settingsContext', settingsData);
+  // console.log('settingsContext', settingsData);
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {

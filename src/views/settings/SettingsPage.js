@@ -24,7 +24,7 @@ const initialState = {
 const SettingsPage = () => {
   const { userUid, settingsData } = useContext(TasksContext);
   const [settings, setSettings] = useState(initialState);
-  console.log('settingsForm', settings);
+  // console.log('settingsForm', settings);
 
   useEffect(() => {
     setSettings(settingsData);
@@ -61,7 +61,9 @@ const SettingsPage = () => {
         setSettings={handleSetSettings}
         emailNotifications={settings.emailNotifications}
       />
-      <button onClick={handleSubmit}>Save settings</button>
+      <button className={styles.saveBtn} onClick={handleSubmit}>
+        Save settings
+      </button>
     </div>
   );
 };

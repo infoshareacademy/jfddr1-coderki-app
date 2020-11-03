@@ -1,12 +1,13 @@
 .header {
   font-size: 1.4rem;
-  padding: 30px;
+  padding: 10px;
   text-align: center;
 }
 .subheader {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .form {
@@ -16,17 +17,19 @@
   justify-content: center;
 }
 
-input {
+.settingsInput {
   width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  margin: 10px 0 22px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: none;
   background: #ffffff;
   border: 1px solid #c5c5c5;
 }
 
 button {
-  background-color: #3f5097;
+  background-color: #5c75d8;
   color: white;
   font-size: 18px;
   padding: 16px 20px;
@@ -37,8 +40,21 @@ button {
   opacity: 0.9;
   border-radius: 10px;
 }
-
+button:active {
+  background-color: #9daff7;
+}
 .buttonContainer {
   display: flex;
   justify-content: space-between;
+}
+
+.container {
+  padding: 16px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  background: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 40px;
 }
