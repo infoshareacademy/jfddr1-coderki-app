@@ -58,7 +58,7 @@ export const MainSettings = ({
       </div>
       <h2 className={styles.subheader}>Change your password</h2>
       <button>Click to change password</button>
-      <h2 className={styles.subheader}>Log out</h2>
+      <h2 className={styles.subheader}>Sign out</h2>
       <button onClick={() => firebase.auth().signOut()}>Sign out</button>
       <h2 className={styles.subheader}>About us</h2>
       <h2 className={styles.subheader}>Privacy Policy</h2>
