@@ -3,11 +3,9 @@ import { TasksContext } from '../../TasksContext';
 import { Tasks } from '../../components/Tasks';
 import ClearFiltersBtn from './components/ClearFiltersBtn';
 import CategoryTagsList from './components/CategoryTagsList';
-// import TaskList from '../../components/TasksList';
+import StatusTagsList from './components/StatusTagsList';
 
 const TasksPage = () => {
-  // const { tasks } = useContext(TasksContext);
-
   const [filtered, setFiltered] = useState([]);
   console.log('tasksfilter', filtered);
 
@@ -15,12 +13,9 @@ const TasksPage = () => {
     <div>
       <Filters setFiltered={setFiltered} />
       <CategoryTagsList />
+      <StatusTagsList />
       <ClearFiltersBtn />
-      {/* {tasks
-        .filter((task) => compareTags(task.category, activeTags))
-        .map((task) => ( */}
       <Tasks tasks={filtered} />
-      {/* // ))} */}
     </div>
   );
 };
@@ -28,18 +23,21 @@ const TasksPage = () => {
 export default TasksPage;
 
 const Filters = ({ setFiltered }) => {
-  const { tasks, activeTags } = useContext(TasksContext);
+  const { tasks, activeCategoryTags, activeStatusTags } = useContext(
+    TasksContext
+  );
 
   const [phrase, setPhrase] = useState('');
-  // const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedStatus, setSelectedStatus] = useState('');
 
-  const compareTags = (taskCategoryTags, activeTags) => {
-    return activeTags.every((tag) => taskCategoryTags.includes(tag));
+  const compareCategoryTags = (tasksCatTags, activeCategoryTags) => {
+    return activeCategoryTags.every((tag) => tasksCatTags.includes(tag));
+  };
+
+  const compareStatusTags = (tasksStatTags, activeStatusTags) => {
+    return activeStatusTags.every((tag) => tasksStatTags.includes(tag));
   };
 
   useEffect(() => {
-    console.log(activeTags);
     const tasksFilteredByTitle = (tasks) => {
       return tasks.filter((task) => {
         return task.title.toLowerCase().includes(phrase.toLowerCase());
@@ -48,30 +46,28 @@ const Filters = ({ setFiltered }) => {
 
     const tasksFilteredByCategory = (tasks) => {
       return tasks
-        .filter((task) => compareTags(task.category, activeTags))
+        .filter((task) =>
+          compareCategoryTags(task.category, activeCategoryTags)
+        )
         .filter((task) => {
-          return task.category.includes(activeTags);
+          return task.category.includes(activeCategoryTags);
         });
     };
 
-    // const tasksFilteredByStatus = (tasks) => {
-    //   return tasks.filter((task) => {
-    //     return task.category
-    //       .toLowerCase()
-    //       .includes(selectedStatus.toLowerCase());
-    //   });
-    // };
-
-    const all = tasksFilteredByCategory(tasksFilteredByTitle(tasks));
-
-    console.log('allfilter', all);
+    const tasksFilteredByStatus = (tasks) => {
+      return tasks
+        .filter((task) => compareStatusTags(task.status, activeStatusTags))
+        .filter((task) => {
+          return task.status.includes(activeStatusTags);
+        });
+    };
 
     setFiltered(
-      // tasksFilteredByStatus(
-      tasksFilteredByCategory(tasksFilteredByTitle(tasks))
-      // )
+      tasksFilteredByStatus(
+        tasksFilteredByCategory(tasksFilteredByTitle(tasks))
+      )
     );
-  }, [phrase, activeTags, selectedStatus, tasks]);
+  }, [phrase, activeCategoryTags, activeStatusTags, tasks]);
 
   return (
     <div style={{ background: '#FFE5D6' }}>
@@ -86,51 +82,15 @@ const Filters = ({ setFiltered }) => {
           />
         </div>
       </div>
-      <div>
-        {/* <div style={{ marginTop: 10 }}>
-          <label>Filter by categories: </label>
-          <select
-            name="category"
-            style={{ fontFamily: 'Quicksand' }}
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-          >
-            <option></option>
-            <option value="education">Education</option>
-            <option value="sport">Sport</option>
-            <option value="duties">House duties</option>
-            <option value="relax">Relax</option>
-            <option value="meeting">Meeting</option>
-            <option value="appointment">Appointment</option>
-            <option value="work">Work</option>
-          </select>
-        </div> */}
-        <div style={{ marginTop: 10 }}>
-          <label>Filter by status: </label>
-          <select
-            name="status"
-            style={{ fontFamily: 'Quicksand' }}
-            value={selectedStatus}
-            onChange={(e) => setSelectedStatus(e.target.value)}
-          >
-            <option value="placeholder"></option>
-            <option value="all">All</option>
-            <option value="open">Open</option>
-            <option value="inProgress">In progress</option>
-            <option value="someday">Someday</option>
-            <option value="closed">Closed</option>
-          </select>
-        </div>
-        <h2
-          style={{
-            textAlign: 'center',
-            marginBottom: 5,
-            paddingBottom: 3,
-          }}
-        >
-          All tasks
-        </h2>
-      </div>
+      <h2
+        style={{
+          textAlign: 'center',
+          marginBottom: 5,
+          paddingBottom: 3,
+        }}
+      >
+        All tasks
+      </h2>
     </div>
   );
 };

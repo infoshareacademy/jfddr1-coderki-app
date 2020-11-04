@@ -6,7 +6,9 @@ export const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
-  const [activeTags, setActiveTags] = useState([]);
+  const [activeCategoryTags, setActiveCategoryTags] = useState([]);
+  const [activeStatusTags, setActiveStatusTags] = useState([]);
+
   const [userUid, setUserUid] = useState(null);
   const [settingsData, setSettingsData] = useState({});
   // console.log('settingsContext', settingsData);
@@ -77,16 +79,29 @@ export const TasksProvider = ({ children }) => {
   //   firebase.firestore().collection('tasks').doc(taskId).update(taskData);
   // };
 
-  const clickedTag = (tag) => {
-    if (!activeTags.includes(tag)) {
-      setActiveTags([...activeTags, tag]);
+  const clickCategoryTag = (tag) => {
+    if (!activeCategoryTags.includes(tag)) {
+      setActiveCategoryTags([...activeCategoryTags, tag]);
     } else {
-      setActiveTags(activeTags.filter((activeTag) => activeTag !== tag));
+      setActiveCategoryTags(
+        activeCategoryTags.filter((activeCatTag) => activeCatTag !== tag)
+      );
+    }
+  };
+
+  const clickStatusTag = (tag) => {
+    if (!activeStatusTags.includes(tag)) {
+      setActiveStatusTags([...activeStatusTags, tag]);
+    } else {
+      setActiveStatusTags(
+        activeStatusTags.filter((activeStatTag) => activeStatTag !== tag)
+      );
     }
   };
 
   const clearActiveTags = () => {
-    setActiveTags([]);
+    setActiveCategoryTags([]);
+    setActiveStatusTags([]);
   };
 
   const value = {
@@ -100,9 +115,12 @@ export const TasksProvider = ({ children }) => {
     // updateTask,
     //     selectedFilters,
     //     setSelectedFilters,
-    activeTags,
-    setActiveTags,
-    clickedTag,
+    clickCategoryTag,
+    activeCategoryTags,
+    setActiveCategoryTags,
+    clickStatusTag,
+    activeStatusTags,
+    setActiveStatusTags,
     clearActiveTags,
   };
 
