@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
 import styles from './Task.module.css';
 import dots from '../img/horizontal-dots.svg';
-import { TasksContext } from '../TasksContext';
+import { TaskDetails } from './TaskDetails';
 
-export const Tasks = () => {
-  const { tasks } = useContext(TasksContext);
+export const Tasks = ({ tasks }) => {
   const [selectedTaskId, setSelectedTaskId] = useState(null);
 
   const handleToggle = (id) => {
@@ -34,25 +33,7 @@ export const Tasks = () => {
             />
           </div>
 
-          {task.id === selectedTaskId && (
-            <div>
-              <p className={styles.smallerText}>Status: {task.status}</p>
-              <p className={styles.smallerText}>Category: {task.category}</p>
-              <p className={styles.smallerText}>
-                Description: {task.description}
-              </p>
-              <p className={styles.smallerText}>
-                Assigned to: {task.assignedTo}
-              </p>
-              <p className={styles.smallerText}>
-                End time: {task.startTimeData} {task.endTimeTime}
-              </p>
-              <p className={styles.smallerText}>Reminder: {task.reminder}</p>
-              <p className={styles.smallerText}>Repeate: {task.repeate}</p>
-              <button className={styles.button}>Edit task</button>
-              <button className={styles.button}>Delete task</button>
-            </div>
-          )}
+          {task.id === selectedTaskId && <TaskDetails task={task} />}
         </div>
       ))}
     </div>
