@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import firebase from 'firebase/app';
+import React, { useState, useContext } from 'react';
 import SignInForm from '../SignInForm.js/SignInForm';
+import { UserContext } from '../../UserContext';
 
 import 'firebase/auth';
 
@@ -10,13 +10,14 @@ const initialState = {
 };
 
 function SignUpForm() {
+  const { createUser } = useContext(UserContext);
   const [showSignUpForm, setShowSignUpForm] = useState(true);
 
   const [formState, setFormState] = useState(initialState);
   const handleSubmit = (event) => {
     event.preventDefault();
     const { email, password } = formState;
-    firebase.auth().createUserWithEmailAndPassword(email, password);
+    createUser(email, password);
   };
   const handleChange = (event) => {
     const { name, value } = event.target;

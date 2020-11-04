@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import SignInForm from '../SignInForm.js/SignInForm';
 import Footer from './components/Footer';
+import { UserContext } from '../../UserContext';
 import logo from '../../img/logo.png';
 import styles from './AuthGuard.module.css';
 
-import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const Cover = () => {
@@ -24,15 +24,7 @@ const Cover = () => {
 };
 
 function AuthGuard({ children }) {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      setUser(user);
-    });
-  }, []);
-
-  const isLoggedIn = user === null ? false : true;
+  const { isLoggedIn } = useContext(UserContext);
   return isLoggedIn ? children : <Cover />;
 }
 

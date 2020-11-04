@@ -6,14 +6,17 @@ import { TasksProvider } from './TasksContext';
 import './Firebase/firebase';
 import Root from './views/Root/Root';
 import AuthGuard from './views/AuthGuard.js/AuthGuard';
+import { UserProvider } from './UserContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TasksProvider>
-      <AuthGuard>
-        <Root />
-      </AuthGuard>
-    </TasksProvider>
+    <UserProvider>
+      <TasksProvider>
+        <AuthGuard>
+          <Root />
+        </AuthGuard>
+      </TasksProvider>
+    </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
