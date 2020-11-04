@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Tasks.module.css';
 import dots from '../img/horizontal-dots.svg';
-<<<<<<< HEAD
 import { TaskDetails } from './TaskDetails';
-=======
->>>>>>> master
 
 export const Tasks = ({ tasks }) => {
   const [selectedTaskId, setSelectedTaskId] = useState(null);
