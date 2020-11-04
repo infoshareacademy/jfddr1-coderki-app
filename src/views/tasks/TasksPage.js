@@ -1,29 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { TasksContext } from '../../TasksContext';
-import { Task } from '../../components/Task';
+import { Tasks } from '../../components/Tasks';
 import ClearFiltersBtn from './components/ClearFiltersBtn';
 import CategoryTagsList from './components/CategoryTagsList';
 // import TaskList from '../../components/TasksList';
 
 const TasksPage = () => {
-  const { tasks, activeTags } = useContext(TasksContext);
+  // const { tasks } = useContext(TasksContext);
 
   const [filtered, setFiltered] = useState([]);
   console.log('tasksfilter', filtered);
 
-  const compareTags = (taskTags, activeTags) => {
-    return activeTags.every((tag) => taskTags.includes(tag));
-  };
   return (
     <div>
       <Filters setFiltered={setFiltered} />
       <CategoryTagsList />
       <ClearFiltersBtn />
-      {tasks
+      {/* {tasks
         .filter((task) => compareTags(task.category, activeTags))
-        .map((task) => (
-          <Task task={task} />
-        ))}
+        .map((task) => ( */}
+      <Tasks tasks={filtered} />
+      {/* // ))} */}
     </div>
   );
 };
@@ -31,13 +28,18 @@ const TasksPage = () => {
 export default TasksPage;
 
 const Filters = ({ setFiltered }) => {
-  const { tasks } = useContext(TasksContext);
+  const { tasks, activeTags } = useContext(TasksContext);
 
   const [phrase, setPhrase] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
+  // const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedStatus, setSelectedStatus] = useState('');
 
+  const compareTags = (taskCategoryTags, activeTags) => {
+    return activeTags.every((tag) => taskCategoryTags.includes(tag));
+  };
+
   useEffect(() => {
+    console.log(activeTags);
     const tasksFilteredByTitle = (tasks) => {
       return tasks.filter((task) => {
         return task.title.toLowerCase().includes(phrase.toLowerCase());
@@ -45,33 +47,31 @@ const Filters = ({ setFiltered }) => {
     };
 
     const tasksFilteredByCategory = (tasks) => {
-      return tasks.filter((task) => {
-        return task.category
-          .toLowerCase()
-          .includes(selectedCategory.toLowerCase());
-      });
+      return tasks
+        .filter((task) => compareTags(task.category, activeTags))
+        .filter((task) => {
+          return task.category.includes(activeTags);
+        });
     };
 
-    const tasksFilteredByStatus = (tasks) => {
-      return tasks.filter((task) => {
-        return task.category
-          .toLowerCase()
-          .includes(selectedStatus.toLowerCase());
-      });
-    };
+    // const tasksFilteredByStatus = (tasks) => {
+    //   return tasks.filter((task) => {
+    //     return task.category
+    //       .toLowerCase()
+    //       .includes(selectedStatus.toLowerCase());
+    //   });
+    // };
 
-    const all = tasksFilteredByStatus(
-      tasksFilteredByCategory(tasksFilteredByTitle(tasks))
-    );
+    const all = tasksFilteredByCategory(tasksFilteredByTitle(tasks));
 
     console.log('allfilter', all);
 
     setFiltered(
-      tasksFilteredByStatus(
-        tasksFilteredByCategory(tasksFilteredByTitle(tasks))
-      )
+      // tasksFilteredByStatus(
+      tasksFilteredByCategory(tasksFilteredByTitle(tasks))
+      // )
     );
-  }, [phrase, selectedCategory, selectedStatus, tasks]);
+  }, [phrase, activeTags, selectedStatus, tasks]);
 
   return (
     <div style={{ background: '#FFE5D6' }}>
