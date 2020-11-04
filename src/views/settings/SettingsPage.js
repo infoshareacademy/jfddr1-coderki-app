@@ -6,6 +6,7 @@ import styles from './SettingsPage.module.css';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import { TasksContext } from '../../TasksContext';
+import { UserContext } from '../../UserContext';
 
 const initialState = {
   userName: '',
@@ -22,9 +23,11 @@ const initialState = {
 };
 
 const SettingsPage = () => {
-  const { userUid, settingsData } = useContext(TasksContext);
+  const { user } = useContext(UserContext);
+
+  const { settingsData } = useContext(TasksContext);
   const [settings, setSettings] = useState(initialState);
-  // console.log('settingsForm', settings);
+  console.log('settingsForm', settings);
 
   useEffect(() => {
     setSettings(settingsData);
@@ -40,7 +43,7 @@ const SettingsPage = () => {
 
   const handleSubmit = () => {
     // make request to firebase
-    firebase.firestore().collection('users').doc(userUid).update(settings);
+    firebase.firestore().collection('users').doc(user.uid).update(settings);
   };
 
   return (

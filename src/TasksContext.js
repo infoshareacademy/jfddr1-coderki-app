@@ -1,10 +1,12 @@
-import React, { useState, createContext, useEffect } from 'react';
+import React, { useState, createContext, useEffect, useContext } from 'react';
+import { UserContext } from './UserContext';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 
 export const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
+  const { user } = useContext(UserContext);
   const [tasks, setTasks] = useState([]);
   const [activeCategoryTags, setActiveCategoryTags] = useState([]);
   const [activeStatusTags, setActiveStatusTags] = useState([]);
@@ -24,22 +26,33 @@ export const TasksProvider = ({ children }) => {
   }, [userUid]);
 
   useEffect(() => {
-    if (userUid) {
-      firebase
-        .firestore()
-        .collection('users')
-        .doc(userUid)
-        .onSnapshot((snapshot) => {
-          setSettingsData(snapshot.data());
-        });
+    if (user === null) {
+      return;
     }
-  }, [userUid]);
+
+    const userSettings = firebase
+      .firestore()
+      .collection('users')
+      .doc(user.uid)
+      .onSnapshot((snapshot) => {
+        setSettingsData(snapshot.data());
+      });
+    return () => {
+      userSettings();
+    };
+  }, [user]);
 
   //   const [selectedFilters, setSelectedFilters] = useState(['one', 'two'])
 
   useEffect(() => {
-    firebase
+    if (user === null) {
+      return;
+    }
+
+    const userTasks = firebase
       .firestore()
+      .collection('users')
+      .doc(user.uid)
       .collection('tasks')
       .onSnapshot((snapshot) => {
         const tasks = [];
@@ -58,7 +71,10 @@ export const TasksProvider = ({ children }) => {
         });
         setTasks(tasks);
       });
-  }, []);
+    return () => {
+      userTasks();
+    };
+  }, [user]);
 
   const addTask = (taskData) => {
     const newTask = {
@@ -68,15 +84,32 @@ export const TasksProvider = ({ children }) => {
       place: taskData.place,
       description: taskData.description,
     };
-    firebase.firestore().collection('tasks').add(newTask);
+    firebase
+      .firestore()
+      .collection('users')
+      .doc(user.uid)
+      .collection('tasks')
+      .add(newTask);
   };
 
   // const deleteTask = (taskToDeleteId) => {
-  //   firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
+  //   firebase
+  // .firestore()
+  // .collection('users')
+  // .doc(user.uid)
+  // .collection('tasks')
+  // .doc(taskToDeleteId)
+  // .delete();
   // };
 
   // const updateTask = (taskId, taskData) => {
-  //   firebase.firestore().collection('tasks').doc(taskId).update(taskData);
+  //   firebase
+  // .firestore()
+  // .collection('users')
+  // .doc(user.uid)
+  // .collection('tasks')
+  // .doc(taskId)
+  // .update(taskData);
   // };
 
   const clickCategoryTag = (tag) => {
