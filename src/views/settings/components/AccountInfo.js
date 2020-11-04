@@ -9,9 +9,10 @@ export const AccountInfo = ({
 }) => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>Your account information: </h1>
+      <h1 className={styles.header}>Account information: </h1>
       <form>
         <input
+          className={styles.settingsInput}
           name="userName"
           onChange={(e) => setSettings('userName', e.target.value)}
           placeholder="Enter your name"
@@ -38,7 +39,7 @@ export const AccountInfo = ({
           Child
         </button>
       </div>
-      <h2 className={styles.subheader}>Add your photo</h2>
+      {/* <h2 className={styles.subheader}>Add your photo</h2>
       <button
       // name="selectedFile"
       // type="file"
@@ -46,7 +47,7 @@ export const AccountInfo = ({
       // onClick={(e) => setSettings('selectedFile', e.target.files[0])}
       >
         Click to choose photo
-      </button>
+      </button> */}
     </div>
   );
 };

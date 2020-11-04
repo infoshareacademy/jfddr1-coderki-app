@@ -1,7 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
 .mainContainer {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: column;
   background: #ffffff;
   border-left: 20px solid #da596e;
   border-radius: 10px;
@@ -9,34 +13,36 @@
   padding-left: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
+  position: relative;
 }
 
 .textContainer {
   display: flex;
-  width: 95%;
   flex-direction: column;
 }
 
 .smallerText {
   margin: 0;
-  padding: 0;
-  font-size: 12px;
+  padding: 3px;
+  font-size: 14px;
 }
 
 .titleText {
-  font-size: 15px;
+  font-size: 16px;
   margin: 2px 0;
   font-weight: bold;
 }
 
-.iconContainer {
-  width: 15%;
-  height: 100%;
-  margin-top: 15px;
-}
-
 .seeMoreIcon {
   text-align: center;
-  height: 50%;
-  width: 50%;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.button {
+  padding: 5px 15px;
+  width: fit-content;
 }

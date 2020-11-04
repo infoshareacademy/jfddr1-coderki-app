@@ -7,6 +7,33 @@ export const TasksContext = createContext();
 export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const [activeTags, setActiveTags] = useState([]);
+  const [userUid, setUserUid] = useState(null);
+  const [settingsData, setSettingsData] = useState({});
+  // console.log('settingsContext', settingsData);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUserUid(user.uid);
+      } else {
+        setUserUid(null);
+      }
+    });
+  }, [userUid]);
+
+  useEffect(() => {
+    if (userUid) {
+      firebase
+        .firestore()
+        .collection('users')
+        .doc(userUid)
+        .onSnapshot((snapshot) => {
+          setSettingsData(snapshot.data());
+        });
+    }
+  }, [userUid]);
+
+  //   const [selectedFilters, setSelectedFilters] = useState(['one', 'two'])
 
   useEffect(() => {
     firebase
@@ -66,6 +93,9 @@ export const TasksProvider = ({ children }) => {
     tasks: tasks === null ? [] : tasks,
     setTasks,
     addTask,
+    userUid,
+    settingsData,
+    setSettingsData,
     // deleteTask,
     // updateTask,
     //     selectedFilters,

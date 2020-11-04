@@ -1,13 +1,15 @@
 .container {
-  padding: 16px;
-  border-radius: 10px;
-  background: #ffffff;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: 85px;
+  margin-top: 40px;
+  margin-bottom: 90px;
 }
 
 .title {
   font-size: 1.1rem;
+}
+.saveBtn {
+  font-size: 23px;
+  padding: 18px 27px;
+  margin: 8px 4px;
 }
