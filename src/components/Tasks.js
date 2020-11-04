@@ -1,10 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Tasks.module.css';
 import dots from '../img/horizontal-dots.svg';
-import { TasksContext } from '../TasksContext';
 
 export const Tasks = ({ tasks }) => {
-  //const { tasks } = useContext(TasksContext);
   const [selectedTaskId, setSelectedTaskId] = useState(null);
 
   const handleToggle = (id) => {
