@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7f53d332e87a6ab73b343ace301ae22e",
+    "revision": "5740e96784cd746282132879144def51",
     "url": "/jfddr1-coderki-app/index.html"
   },
   {
-    "revision": "aa6bc4b35c9453a9543d",
-    "url": "/jfddr1-coderki-app/static/css/main.29178a56.chunk.css"
+    "revision": "a00bbe75119238002fdc",
+    "url": "/jfddr1-coderki-app/static/css/main.0b965f5d.chunk.css"
   },
   {
-    "revision": "e9ca65dab2ffd60c4dd2",
-    "url": "/jfddr1-coderki-app/static/js/2.6d91ac54.chunk.js"
+    "revision": "0fcf855c0fb12d0a0803",
+    "url": "/jfddr1-coderki-app/static/js/2.dc5d29e9.chunk.js"
   },
   {
     "revision": "f9e7e68e90600aabdd7d1f759413461d",
-    "url": "/jfddr1-coderki-app/static/js/2.6d91ac54.chunk.js.LICENSE.txt"
+    "url": "/jfddr1-coderki-app/static/js/2.dc5d29e9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aa6bc4b35c9453a9543d",
-    "url": "/jfddr1-coderki-app/static/js/main.274bf70d.chunk.js"
+    "revision": "a00bbe75119238002fdc",
+    "url": "/jfddr1-coderki-app/static/js/main.66cb8e27.chunk.js"
   },
   {
     "revision": "8067ca46ea3c38110a67",
