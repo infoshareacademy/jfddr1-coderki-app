@@ -3,10 +3,13 @@ import styles from './EditTaskForm.module.css';
 
 export const EditTaskForm = ({ task }) => {
   const [formState, setFormState] = useState(task);
-  console.log(task);
 
   const handleChange = (e) => {
-    setFormState({ ...task, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormState((oldState) => ({
+      ...oldState,
+      [name]: value,
+    }));
   };
 
   return (
@@ -34,7 +37,7 @@ export const EditTaskForm = ({ task }) => {
           value={formState.category}
           onChange={handleChange}
         />
-        <input
+        {/* <input
           name="startTime"
           placeholder="Start"
           type="date"
@@ -53,7 +56,7 @@ export const EditTaskForm = ({ task }) => {
           type="text"
           value={formState.description}
           onChange={handleChange}
-        />
+        /> */}
         <button type="submit" className={styles.button}>
           Save
         </button>
