@@ -7,6 +7,7 @@ const HomePage = () => {
   const filteredTasks = tasks.slice(0, 4);
   return (
     <>
+      <h2>Hello user! Today is {new Date().toLocaleDateString()}</h2>
       {/* <Header /> */}
       <Tasks tasks={filteredTasks} />
     </>

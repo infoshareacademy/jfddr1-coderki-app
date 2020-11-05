@@ -71,13 +71,13 @@ export const TasksProvider = ({ children }) => {
     firebase.firestore().collection('tasks').add(newTask);
   };
 
-  // const deleteTask = (taskToDeleteId) => {
-  //   firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
-  // };
+  const deleteTask = (taskToDeleteId) => {
+    firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
+  };
 
-  // const updateTask = (taskId, taskData) => {
-  //   firebase.firestore().collection('tasks').doc(taskId).update(taskData);
-  // };
+  const updateTask = (taskId, taskData) => {
+    firebase.firestore().collection('tasks').doc(taskId).update(taskData);
+  };
 
   const clickCategoryTag = (tag) => {
     if (!activeCategoryTags.includes(tag)) {
@@ -111,8 +111,8 @@ export const TasksProvider = ({ children }) => {
     userUid,
     settingsData,
     setSettingsData,
-    // deleteTask,
-    // updateTask,
+    deleteTask,
+    updateTask,
     //     selectedFilters,
     //     setSelectedFilters,
     clickCategoryTag,

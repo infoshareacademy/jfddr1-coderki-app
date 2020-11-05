@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './EditTaskForm.module.css';
+import { TasksContext } from '../TasksContext';
 
 export const EditTaskForm = ({ task }) => {
+  const { updateTask, deleteTask } = useContext(TasksContext);
   const [formState, setFormState] = useState(task);
+  // const [updatedTask, setUpdatedTask] = useState(formState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -11,6 +14,28 @@ export const EditTaskForm = ({ task }) => {
       [name]: value,
     }));
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   updateTask(
+  //     task.id,
+  //     setUpdatedTask((upState) => ({
+  //       ...upState,
+  //       updatedTask,
+  //     }))
+  //   );
+  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateTask(formState);
+  };
+
+  const handleRemove = (e) => {
+    e.preventDefault();
+    deleteTask(formState.id);
+  };
+
+  console.log(formState.id);
 
   return (
     <div>
@@ -57,10 +82,12 @@ export const EditTaskForm = ({ task }) => {
           value={formState.description}
           onChange={handleChange}
         /> */}
-        <button type="submit" className={styles.button}>
+        <button type="submit" className={styles.button} onSubmit={handleSubmit}>
           Save
         </button>
-        <button className={styles.button}>Back</button>
+        <button className={styles.button} onClick={handleRemove}>
+          Back
+        </button>
       </form>
     </div>
   );
