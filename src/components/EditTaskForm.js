@@ -2,10 +2,9 @@ import React, { useState, useContext } from 'react';
 import styles from './EditTaskForm.module.css';
 import { TasksContext } from '../TasksContext';
 
-export const EditTaskForm = ({ task }) => {
+export const EditTaskForm = ({ task, onBack }) => {
   const { updateTask, deleteTask } = useContext(TasksContext);
   const [formState, setFormState] = useState(task);
-  // const [updatedTask, setUpdatedTask] = useState(formState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,19 +14,10 @@ export const EditTaskForm = ({ task }) => {
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   updateTask(
-  //     task.id,
-  //     setUpdatedTask((upState) => ({
-  //       ...upState,
-  //       updatedTask,
-  //     }))
-  //   );
-  // };
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateTask(formState);
+    const { id, ...task } = formState;
+    updateTask(id, task);
   };
 
   const handleRemove = (e) => {
@@ -39,7 +29,7 @@ export const EditTaskForm = ({ task }) => {
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <p>edit task:</p>
         <input
           type="text"
@@ -62,7 +52,7 @@ export const EditTaskForm = ({ task }) => {
           value={formState.category}
           onChange={handleChange}
         />
-        {/* <input
+        <input
           name="startTime"
           placeholder="Start"
           type="date"
@@ -78,15 +68,19 @@ export const EditTaskForm = ({ task }) => {
         />
         <input
           name="description"
+          placeholder="description"
           type="text"
           value={formState.description}
           onChange={handleChange}
-        /> */}
-        <button type="submit" className={styles.button} onSubmit={handleSubmit}>
+        />
+        <button type="submit" className={styles.button}>
           Save
         </button>
         <button className={styles.button} onClick={handleRemove}>
-          Back
+          Remove
+        </button>
+        <button className={styles.button} onClick={onBack}>
+          Close
         </button>
       </form>
     </div>

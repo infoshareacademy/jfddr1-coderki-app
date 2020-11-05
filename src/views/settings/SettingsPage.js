@@ -27,6 +27,9 @@ const SettingsPage = () => {
   // console.log('settingsForm', settings);
 
   useEffect(() => {
+    if (!settingsData) {
+      return;
+    }
     setSettings(settingsData);
   }, [settingsData]);
 
@@ -40,7 +43,7 @@ const SettingsPage = () => {
 
   const handleSubmit = () => {
     // make request to firebase
-    firebase.firestore().collection('users').doc(userUid).update(settings);
+    firebase.firestore().collection('users').doc(userUid).set(settings);
   };
 
   return (

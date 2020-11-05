@@ -5,7 +5,7 @@ import styles from './Tasks.module.css';
 export const TaskDetails = ({ task }) => {
   const [isInEditMode, setIsInEditMode] = useState(false);
   return isInEditMode ? (
-    <EditTaskForm task={task} />
+    <EditTaskForm task={task} onBack={() => setIsInEditMode(false)} />
   ) : (
     <div>
       <p className={styles.smallerText}>Status: {task.status}</p>

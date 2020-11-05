@@ -9,19 +9,21 @@ export const TasksProvider = ({ children }) => {
   const [activeCategoryTags, setActiveCategoryTags] = useState([]);
   const [activeStatusTags, setActiveStatusTags] = useState([]);
 
-  const [userUid, setUserUid] = useState(null);
+  const [user, setUser] = useState(null);
   const [settingsData, setSettingsData] = useState({});
   // console.log('settingsContext', settingsData);
+
+  const userUid = user && user.uid;
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        setUserUid(user.uid);
+        setUser(user);
       } else {
-        setUserUid(null);
+        setUser(null);
       }
     });
-  }, [userUid]);
+  }, []);
 
   useEffect(() => {
     if (userUid) {
@@ -109,6 +111,7 @@ export const TasksProvider = ({ children }) => {
     setTasks,
     addTask,
     userUid,
+    user,
     settingsData,
     setSettingsData,
     deleteTask,
