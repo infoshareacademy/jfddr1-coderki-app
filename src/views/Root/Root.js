@@ -11,8 +11,8 @@ import '../../App.css';
 
 function Root() {
   return (
-    <BrowserRouter>
-      <div className="App" style={{ height: '100%' }}>
+    <div className="App">
+      <BrowserRouter>
         <Switch>
           <Route path="/home">
             <Header children="Home" />
@@ -44,8 +44,8 @@ function Root() {
             <HomePage />
           </Route>
         </Switch>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 

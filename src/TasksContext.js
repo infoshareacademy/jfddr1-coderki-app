@@ -36,12 +36,16 @@ export const TasksProvider = ({ children }) => {
         });
     }
   }, [userUid]);
-
   //   const [selectedFilters, setSelectedFilters] = useState(['one', 'two'])
 
   useEffect(() => {
+    if (user === null) {
+      return;
+    }
     firebase
       .firestore()
+      .collection('users')
+      .doc(user.uid)
       .collection('tasks')
       .onSnapshot((snapshot) => {
         const tasks = [];
@@ -60,7 +64,7 @@ export const TasksProvider = ({ children }) => {
         });
         setTasks(tasks);
       });
-  }, []);
+  }, [userUid]);
 
   const addTask = (taskData) => {
     const newTask = {
@@ -70,7 +74,12 @@ export const TasksProvider = ({ children }) => {
       place: taskData.place,
       description: taskData.description,
     };
-    firebase.firestore().collection('tasks').add(newTask);
+    firebase
+      .firestore()
+      .collection('users')
+      .doc(userUid)
+      .collection('tasks')
+      .add(newTask);
   };
 
   const deleteTask = (taskToDeleteId) => {

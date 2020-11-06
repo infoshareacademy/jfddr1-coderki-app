@@ -1,0 +1,36 @@
+.tag {
+  width: 120px;
+  min-height: 40px;
+  font-size: 14px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0 10px;
+  background: #e07286;
+}
+
+.activeTag {
+  background-color: #d43f56;
+  outline: none;
+  border: none;
+}
+
+.paddingAndMargin {
+  padding-left: 10px;
+  margin: 10px;
+}
+
+.inputSize {
+  width: 98%;
+  height: 20px;
+  margin-bottom: 0;
+}
+
+.clearFiltersBtn {
+  margin: 10px;
+  border-radius: 10px;
+  width: 300px;
+  margin-top: 20px;
+  box-shadow: 4px 3px 8px #888888;
+  background: #3f5097;
+}
