@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './Menu.module.css';
 import home from '../img/home.svg';
 import calendar from '../img/calendar.svg';
-import plus from '../img/plus.svg';
+import plus from '../img/plus.png';
 import checkbox from '../img/checkbox.svg';
 import settings from '../img/settings.svg';
 

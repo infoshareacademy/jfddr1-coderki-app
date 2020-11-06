@@ -1,17 +1,13 @@
 import React, { useContext } from 'react';
 import { TasksContext } from '../../../TasksContext';
+import styles from './Filters.module.css';
 
 const ClearFiltersBtn = () => {
   const { clearActiveTags } = useContext(TasksContext);
   return (
     <div style={{ textAlign: 'center' }}>
       <button
-        style={{
-          margin: 10,
-          fontWeight: 'bold',
-          borderRadius: 5,
-          width: 200,
-        }}
+        className={styles.clearFiltersBtn}
         onClick={(event) => clearActiveTags(event)}
       >
         CLEAR FILTERS

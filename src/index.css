@@ -3,9 +3,26 @@
 }
 
 body {
-  background: #faf3f0;
+  /* background: #faf3f0; */
+  background-image: linear-gradient(
+    to right top,
+    #3f5097,
+    #85609c,
+    #b4779e,
+    #d494a4,
+    #eab6b2,
+    #f2c2b7,
+    #f9cebe,
+    #ffdac5,
+    #fed2b8,
+    #fdcaac,
+    #fcc29f,
+    #faba93
+  );
+  min-height: 100vh;
   width: 100%;
-  border: 5px solid #ffffff;
+  /* border: 5px solid #ffffff; */
+  /* border-radius: 10px; */
 
   margin: 0;
   padding: 0;

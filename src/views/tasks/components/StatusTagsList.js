@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { TasksContext } from '../../../TasksContext';
-import styles from './CategoryTagsList.module.css';
+import styles from './Filters.module.css';
 
 const StatusTagsList = () => {
   const { tasks, activeStatusTags, clickStatusTag } = useContext(TasksContext);
@@ -9,7 +9,7 @@ const StatusTagsList = () => {
 
   return (
     <div>
-      <p>Filter by status: </p>
+      <p className={styles.paddingAndMargin}>Filter by status: </p>
       {uniqueStatusTags.map((tag) => (
         <button
           className={

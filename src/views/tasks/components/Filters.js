@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { TasksContext } from '../../../TasksContext';
+import styles from './Filters.module.css';
 
 const Filters = ({ setFiltered }) => {
   const { tasks, activeCategoryTags, activeStatusTags } = useContext(
@@ -50,16 +51,14 @@ const Filters = ({ setFiltered }) => {
 
   return (
     <div>
-      <div style={{ paddingTop: 10, paddingLeft: 10 }}>
+      <div className={styles.paddingAndMargin}>
         <label>Search task by phrase:</label>
-        <div style={{ display: 'flex', height: 40 }}>
-          <input
-            name="searchField"
-            value={phrase}
-            onChange={(e) => setPhrase(e.target.value)}
-            style={{ width: '98%', height: 20 }}
-          />
-        </div>
+        <input
+          className={styles.inputSize}
+          name="searchField"
+          value={phrase}
+          onChange={(e) => setPhrase(e.target.value)}
+        />
       </div>
     </div>
   );
