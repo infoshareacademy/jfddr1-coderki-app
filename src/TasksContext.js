@@ -39,6 +39,9 @@ export const TasksProvider = ({ children }) => {
   //   const [selectedFilters, setSelectedFilters] = useState(['one', 'two'])
 
   useEffect(() => {
+    if (user === null) {
+      return;
+    }
     firebase
       .firestore()
       .collection('users')
@@ -61,7 +64,7 @@ export const TasksProvider = ({ children }) => {
         });
         setTasks(tasks);
       });
-  }, []);
+  }, [userUid]);
 
   const addTask = (taskData) => {
     const newTask = {
@@ -73,8 +76,8 @@ export const TasksProvider = ({ children }) => {
     };
     firebase
       .firestore()
-      .firestore()
       .collection('users')
+      .doc(userUid)
       .collection('tasks')
       .add(newTask);
   };
