@@ -49,8 +49,8 @@ const Filters = ({ setFiltered }) => {
   }, [phrase, activeCategoryTags, activeStatusTags, tasks]);
 
   return (
-    <div style={{ background: '#FFE5D6' }}>
-      <div>
+    <div>
+      <div style={{ paddingTop: 10, paddingLeft: 10 }}>
         <label>Search task by phrase:</label>
         <div style={{ display: 'flex', height: 40 }}>
           <input
@@ -61,15 +61,6 @@ const Filters = ({ setFiltered }) => {
           />
         </div>
       </div>
-      <h2
-        style={{
-          textAlign: 'center',
-          marginBottom: 5,
-          paddingBottom: 3,
-        }}
-      >
-        All tasks
-      </h2>
     </div>
   );
 };

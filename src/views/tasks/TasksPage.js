@@ -11,10 +11,13 @@ const TasksPage = () => {
 
   return (
     <div>
-      <Filters setFiltered={setFiltered} />
-      <CategoryTagsList />
-      <StatusTagsList />
-      <ClearFiltersBtn />
+      <div style={{ background: '#FFE5D6' }}>
+        <Filters setFiltered={setFiltered} />
+        <CategoryTagsList />
+        <StatusTagsList />
+        <ClearFiltersBtn />
+      </div>
+
       <Tasks tasks={filtered} />
     </div>
   );
