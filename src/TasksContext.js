@@ -6,20 +6,24 @@ export const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
-  const [activeTags, setActiveTags] = useState([]);
-  const [userUid, setUserUid] = useState(null);
+  const [activeCategoryTags, setActiveCategoryTags] = useState([]);
+  const [activeStatusTags, setActiveStatusTags] = useState([]);
+
+  const [user, setUser] = useState(null);
   const [settingsData, setSettingsData] = useState({});
   // console.log('settingsContext', settingsData);
+
+  const userUid = user && user.uid;
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        setUserUid(user.uid);
+        setUser(user);
       } else {
-        setUserUid(null);
+        setUser(null);
       }
     });
-  }, [userUid]);
+  }, []);
 
   useEffect(() => {
     if (userUid) {
@@ -75,24 +79,37 @@ export const TasksProvider = ({ children }) => {
       .add(newTask);
   };
 
-  // const deleteTask = (taskToDeleteId) => {
-  //   firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
-  // };
+  const deleteTask = (taskToDeleteId) => {
+    firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
+  };
 
-  // const updateTask = (taskId, taskData) => {
-  //   firebase.firestore().collection('tasks').doc(taskId).update(taskData);
-  // };
+  const updateTask = (taskId, taskData) => {
+    firebase.firestore().collection('tasks').doc(taskId).update(taskData);
+  };
 
-  const clickedTag = (tag) => {
-    if (!activeTags.includes(tag)) {
-      setActiveTags([...activeTags, tag]);
+  const clickCategoryTag = (tag) => {
+    if (!activeCategoryTags.includes(tag)) {
+      setActiveCategoryTags([...activeCategoryTags, tag]);
     } else {
-      setActiveTags(activeTags.filter((activeTag) => activeTag !== tag));
+      setActiveCategoryTags(
+        activeCategoryTags.filter((activeCatTag) => activeCatTag !== tag)
+      );
+    }
+  };
+
+  const clickStatusTag = (tag) => {
+    if (!activeStatusTags.includes(tag)) {
+      setActiveStatusTags([...activeStatusTags, tag]);
+    } else {
+      setActiveStatusTags(
+        activeStatusTags.filter((activeStatTag) => activeStatTag !== tag)
+      );
     }
   };
 
   const clearActiveTags = () => {
-    setActiveTags([]);
+    setActiveCategoryTags([]);
+    setActiveStatusTags([]);
   };
 
   const value = {
@@ -100,15 +117,19 @@ export const TasksProvider = ({ children }) => {
     setTasks,
     addTask,
     userUid,
+    user,
     settingsData,
     setSettingsData,
-    // deleteTask,
-    // updateTask,
+    deleteTask,
+    updateTask,
     //     selectedFilters,
     //     setSelectedFilters,
-    activeTags,
-    setActiveTags,
-    clickedTag,
+    clickCategoryTag,
+    activeCategoryTags,
+    setActiveCategoryTags,
+    clickStatusTag,
+    activeStatusTags,
+    setActiveStatusTags,
     clearActiveTags,
   };
 

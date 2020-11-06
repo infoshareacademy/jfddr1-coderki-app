@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Tasks.module.css';
 import dots from '../img/horizontal-dots.svg';
+import { TaskDetails } from './TaskDetails';
 
 export const Tasks = ({ tasks }) => {
   const [selectedTaskId, setSelectedTaskId] = useState(null);
@@ -32,25 +33,7 @@ export const Tasks = ({ tasks }) => {
             />
           </div>
 
-          {task.id === selectedTaskId && (
-            <div>
-              <p className={styles.smallerText}>Status: {task.status}</p>
-              <p className={styles.smallerText}>Category: {task.category}</p>
-              <p className={styles.smallerText}>
-                Description: {task.description}
-              </p>
-              <p className={styles.smallerText}>
-                Assigned to: {task.assignedTo}
-              </p>
-              <p className={styles.smallerText}>
-                End time: {task.startTimeData} {task.endTimeTime}
-              </p>
-              <p className={styles.smallerText}>Reminder: {task.reminder}</p>
-              <p className={styles.smallerText}>Repeate: {task.repeate}</p>
-              <button className={styles.button}>Edit task</button>
-              <button className={styles.button}>Delete task</button>
-            </div>
-          )}
+          {task.id === selectedTaskId && <TaskDetails task={task} />}
         </div>
       ))}
     </div>

@@ -16,13 +16,13 @@ function Root() {
         <Switch>
           <Route path="/home">
             <Header children="Home" />
-            <Menu />
             <HomePage />
+            <Menu />
           </Route>
           <Route path="/calendar">
             <Header children="Calendar" />
-            <Menu />
             <CalendarPage />
+            <Menu />
           </Route>
           <Route path="/addTask">
             <Header children="Create new task" />
@@ -31,8 +31,8 @@ function Root() {
           </Route>
           <Route path="/tasks">
             <Header children="Tasks" />
-            <Menu />
             <TasksPage />
+            <Menu />
           </Route>
           <Route path="/settings">
             <Header children="Settings" />
