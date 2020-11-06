@@ -25,8 +25,6 @@ export const EditTaskForm = ({ task, onBack }) => {
     deleteTask(formState.id);
   };
 
-  console.log(formState.id);
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -77,7 +75,7 @@ export const EditTaskForm = ({ task, onBack }) => {
           Save
         </button>
         <button className={styles.button} onClick={handleRemove}>
-          Remove
+          Delete task
         </button>
         <button className={styles.button} onClick={onBack}>
           Close
