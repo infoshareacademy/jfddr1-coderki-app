@@ -1,22 +1,11 @@
 import React from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
 
-// const localizer = momentLocalizer(moment);
+import { CalendarBox } from './components/CalendarBox';
 
 const CalendarPage = () => {
   return (
     <>
-      <div>To jest Kalendarz</div>
-      {/* <div>
-        <Calendar
-          localizer={localizer}
-          //   events={myEventsList}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 500 }}
-        />
-      </div> */}
+      <CalendarBox />
     </>
   );
 };
