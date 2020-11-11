@@ -1,7 +1,7 @@
 .container {
   width: 90%;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 90px;
 }
 
@@ -9,7 +9,11 @@
   font-size: 1.1rem;
 }
 .saveBtn {
-  font-size: 23px;
+  font-size: 16px;
   padding: 18px 27px;
-  margin: 8px 4px;
+  margin: 8px 3px;
+  box-shadow: 4px 3px 8px #888888;
+  background: #3f5097;
+  margin-top: 20px;
+  border-radius: 10px;
 }

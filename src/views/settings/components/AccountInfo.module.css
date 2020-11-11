@@ -1,44 +1,36 @@
 .header {
-  font-size: 1.4rem;
-  padding: 10px;
+  font-size: 1.1rem;
+  padding: 5px;
   text-align: center;
 }
 .subheader {
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-align: center;
-  padding: 10px;
-  padding-bottom: 10px;
-}
-
-.form {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  font-weight: lighter;
+  margin-top: 10px;
 }
 
 .settingsInput {
-  width: 100%;
+  width: 98%;
+  height: 24px;
   padding: 15px 25px;
-  font-size: 1.2rem;
-  margin: 10px 0 22px 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: none;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
   background: #ffffff;
   border: 1px solid #c5c5c5;
 }
 
-button {
-  background-color: #5c75d8;
+.settingsButton {
+  background: #3f5097;
   color: white;
-  font-size: 18px;
-  padding: 16px 20px;
+  box-shadow: 4px 3px 8px #888888;
+  opacity: 0.9;
+  width: 100%;
+  padding: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
   margin: 8px 4px;
   border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  border-radius: 10px;
 }
 button:active {
   background-color: #9daff7;
@@ -47,7 +39,7 @@ button:active {
   display: flex;
   justify-content: space-between;
 }
-
+/* 
 .container {
   padding: 16px;
   padding-bottom: 30px;
@@ -57,4 +49,4 @@ button:active {
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 40px;
-}
+} */

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import styles from './TaskSettings.module.css';
+import styles from './MainSettings.module.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -21,6 +21,7 @@ export const MainSettings = ({
       <h2 className={styles.subheader}>Set account by default as</h2>
       <div className={styles.buttonContainer}>
         <button
+          className={styles.settingsButton}
           name="privateOrPublic"
           type="submit"
           onClick={() => setSettings('privateOrPublic', 'private')}
@@ -29,6 +30,7 @@ export const MainSettings = ({
           Private
         </button>
         <button
+          className={styles.settingsButton}
           name="privateOrPublic"
           type="submit"
           onClick={() => setSettings('privateOrPublic', 'public')}
@@ -40,6 +42,7 @@ export const MainSettings = ({
       <h2 className={styles.subheader}>Set e-mail notifications</h2>
       <div className={styles.buttonContainer}>
         <button
+          className={styles.settingsButton}
           name="emailNotifications"
           type="submit"
           onClick={() => setSettings('emailNotifications', 'yes')}
@@ -48,6 +51,7 @@ export const MainSettings = ({
           Yes
         </button>
         <button
+          className={styles.settingsButton}
           name="emailNotifications"
           type="submit"
           onClick={() => setSettings('emailNotifications', 'no')}
@@ -60,13 +64,17 @@ export const MainSettings = ({
       <button>Click to choose your local time zone</button> */}
       <h2 className={styles.subheader}>Start your week on</h2>
       <div className={styles.buttonContainer}>
-        <button>Sunday</button>
-        <button>Monday</button>
+        <button className={styles.settingsButton}>Sunday</button>
+        <button className={styles.settingsButton}>Monday</button>
       </div>
       <h2 className={styles.subheader}>Change your password</h2>
-      <button>Click to change password</button>
+      <button className={styles.settingsButton}>
+        Click to change password
+      </button>
       <h2 className={styles.subheader}>Sign out</h2>
-      <button onClick={handleClick}>Sign out</button>
+      <button className={styles.settingsButton} onClick={handleClick}>
+        Sign out
+      </button>
       {/* <h2 className={styles.subheader}>About us</h2>
       <h2 className={styles.subheader}>Privacy Policy</h2> */}
     </div>

@@ -1,16 +1,22 @@
 .container {
-  padding: 20px;
+  margin-top: 40px;
   border-radius: 10px;
-  background: #ffffff;
   width: 80%;
   margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 90px;
+  margin-bottom: 70px;
 }
 h1 {
+  font-size: 1.1rem;
+  padding: 5px;
   text-align: center;
-  font-size: 1.5rem;
 }
+.subheader {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
 .buttonContainer {
   display: flex;
   justify-content: space-between;
@@ -21,16 +27,25 @@ h1 {
   justify-content: space-between;
   gap: 5%;
 }
-/* .members-radiobutton {
-  display: inline-block;
-  opacity: 0;
-  background: green;
+.newTaskButton {
+  background: #3f5097;
+  color: white;
+  box-shadow: 4px 3px 8px #888888;
+  opacity: 0.9;
+  width: 100%;
+  padding: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 8px 4px;
+  border: none;
 }
-.members-radiobutton:hover {
-  background: red;
-  color: pink; */
-
-.description {
-  padding: 20px;
-  height: 100px;
+.saveButton {
+  font-size: 16px;
+  padding: 18px 27px;
+  margin: 8px 3px;
+  box-shadow: 4px 3px 8px #888888;
+  background: #3f5097;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
 }
