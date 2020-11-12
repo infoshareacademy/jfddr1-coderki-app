@@ -2,12 +2,17 @@
 
 ### HELLO!
 
-Welcome in repository for awsome Project 3, coded during course for Junior Front-End Developer orginized by infoShare Academy.
+Welcome to repository of our awsome Project 🥳, coded during course for Junior Front-End Developer orginized by infoShare Academy.
 This is a repository prepared by a team of three fearless novice programmers - Corderki 😅.
-Try out our new App for tasks.
 
-## Intro to Home Manager
+## Intro 
 
+In the beggining ... there was C H A O S !!😱
+But then .. our GOD-Michał came and said - "Ladies, get yourself together!" and this is how we moved from panic 😱😱😱 to brainstorming, from brainstorming to designing and from designing to coding... This is how our app arose from ashes. Do not stop yourself and try it out 😊!
+
+-----------------------------------------------------
+
+### Purpose
 The purpose of the developed application is to manage tasks added by users. MVP version was designed for Mobile Devices.
 
 ### Available functionality
