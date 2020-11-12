@@ -43,6 +43,7 @@ function Root() {
             <Menu />
           </Route>
           <Route path="/">
+            <Header children="Home" />
             <Menu />
             <HomePage />
           </Route>

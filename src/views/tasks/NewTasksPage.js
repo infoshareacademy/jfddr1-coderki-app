@@ -10,6 +10,7 @@ let initialState = {
   startTime: '',
   endTime: '',
   description: '',
+  status: '',
   remind: false,
   repeat: false,
 };
@@ -78,6 +79,22 @@ const AddTask = () => {
             value={newTask.description}
             onChange={(e) => handleChange(e)}
           />
+          <p className={styles.subheader}>Task status</p>
+          <select
+            className={styles.select}
+            name="status"
+            onChange={(e) => handleChange(e)}
+          >
+            <option className={styles.option} value="new">
+              New
+            </option>
+            <option className={styles.option} value="in-progress">
+              In progress
+            </option>
+            <option className={styles.option} value="completed">
+              Completed
+            </option>
+          </select>
           <div className={styles.buttonContainer}>
             <button
               className={styles.newTaskButton}

@@ -54,11 +54,11 @@ const SettingsPage = () => {
         familyRole={settings.familyRole}
         // selectedFile={settings.selectedFile}
       />
-      <TaskSettings
+      {/* <TaskSettings
         taskCategory={settings.taskCategory}
         setSettings={handleSetSettings}
         taskCategoryColor={settings.taskCategoryColor}
-      />
+      /> */}
       <MainSettings
         privateOrPublic={settings.privateOrPublic}
         setSettings={handleSetSettings}
