@@ -73,6 +73,7 @@ export const TasksProvider = ({ children }) => {
       category: taskData.category,
       place: taskData.place,
       description: taskData.description,
+      status: taskData.status,
     };
     firebase
       .firestore()
