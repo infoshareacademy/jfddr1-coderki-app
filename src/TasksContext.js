@@ -8,6 +8,7 @@ export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const [activeCategoryTags, setActiveCategoryTags] = useState([]);
   const [activeStatusTags, setActiveStatusTags] = useState([]);
+  const [lastClearId, setLastClearId] = useState(0);
 
   const [user, setUser] = useState(null);
   const [settingsData, setSettingsData] = useState({});
@@ -84,11 +85,23 @@ export const TasksProvider = ({ children }) => {
   };
 
   const deleteTask = (taskToDeleteId) => {
-    firebase.firestore().collection('tasks').doc(taskToDeleteId).delete();
+    firebase
+      .firestore()
+      .collection('users')
+      .doc(userUid)
+      .collection('tasks')
+      .doc(taskToDeleteId)
+      .delete();
   };
 
   const updateTask = (taskId, taskData) => {
-    firebase.firestore().collection('tasks').doc(taskId).update(taskData);
+    firebase
+      .firestore()
+      .collection('users')
+      .doc(userUid)
+      .collection('tasks')
+      .doc(taskId)
+      .update(taskData);
   };
 
   const clickCategoryTag = (tag) => {
@@ -114,10 +127,12 @@ export const TasksProvider = ({ children }) => {
   const clearActiveTags = () => {
     setActiveCategoryTags([]);
     setActiveStatusTags([]);
+    setLastClearId((last) => last + 1);
   };
 
   const value = {
     tasks: tasks === null ? [] : tasks,
+    lastClearId,
     setTasks,
     addTask,
     userUid,

@@ -8,8 +8,11 @@ import AddTask from '../../views/tasks/NewTasksPage';
 import TasksPage from '../../views/tasks/TasksPage';
 import SettingsPage from '../../views/settings/SettingsPage';
 import '../../App.css';
+import { useContext } from 'react';
+import { TasksContext } from '../../TasksContext';
 
 function Root() {
+  const { lastClearId } = useContext(TasksContext);
   return (
     <div className="App">
       <BrowserRouter>
@@ -31,7 +34,7 @@ function Root() {
           </Route>
           <Route path="/tasks">
             <Header children="Tasks" />
-            <TasksPage />
+            <TasksPage key={lastClearId} />
             <Menu />
           </Route>
           <Route path="/settings">
@@ -40,6 +43,7 @@ function Root() {
             <Menu />
           </Route>
           <Route path="/">
+            <Header children="Home" />
             <Menu />
             <HomePage />
           </Route>
