@@ -3,7 +3,7 @@
 ### HELLO!
 
 Welcome to repository of our awsome Project 🥳, coded during course for Junior Front-End Developer orginized by infoShare Academy.
-This is a repository prepared by a team of three fearless novice programmers - Corderki 😅.
+This repo was prepared by a team of three fearless novice programmers - Corderki 😅.
 
 ## Intro 
 
