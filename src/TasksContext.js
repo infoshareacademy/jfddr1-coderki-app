@@ -51,14 +51,17 @@ export const TasksProvider = ({ children }) => {
       .onSnapshot((snapshot) => {
         const tasks = [];
         snapshot.forEach((doc) => {
+          console.log('get start', doc.get('start'));
           tasks.push({
             id: doc.id,
             title: doc.get('title') || '',
             category: doc.get('category') || '',
             status: doc.get('status') || '',
-            startTimeData: doc.get('startTime')?.toDate().toDateString() || '',
-            startTimeTime:
-              doc.get('startTime')?.toDate().toLocaleTimeString('en-US') || '',
+            start: doc.get('start'),
+            // startTimeTime:
+            //   doc.get('startTimeTime')?.toDate().toLocaleTimeString('en-US') ||
+            //   '',
+            end: doc.get('end'),
             place: doc.get('place') || '',
             description: doc.get('description') || '',
           });
@@ -68,12 +71,15 @@ export const TasksProvider = ({ children }) => {
   }, [userUid]);
 
   const addTask = (taskData) => {
+    console.log('taskData', taskData);
     const newTask = {
       title: taskData.title,
       id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()
       category: taskData.category,
       place: taskData.place,
       description: taskData.description,
+      start: taskData.startTime || '',
+      end: taskData.endTime || '',
     };
     firebase
       .firestore()
