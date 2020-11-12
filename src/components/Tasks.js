@@ -12,33 +12,30 @@ export const Tasks = ({ tasks }) => {
 
   return (
     <div className={styles.wrapper}>
-      {tasks.map(
-        (task) =>
-          console.log('taski', task) || (
-            <div className={styles.mainContainer}>
-              <div onClick={() => handleToggle(task.id)}>
-                <div className={styles.textContainer}>
-                  <p className={styles.smallerText}>
-                    {task.start}
-                    <span style={{ marginLeft: 15 }}>{task.end}</span>
-                  </p>
-                  <p className={styles.titleText}>{task.title}</p>
-                  <p className={styles.smallerText}>
-                    {task.place ? 'Place: ' + task.place : null}
-                  </p>
-                </div>
-
-                <img
-                  src={dots}
-                  className={styles.seeMoreIcon}
-                  alt="icon with 3 dots"
-                />
-              </div>
-
-              {task.id === selectedTaskId && <TaskDetails task={task} />}
+      {tasks.map((task) => (
+        <div key={task.id} className={styles.mainContainer}>
+          <div onClick={() => handleToggle(task.id)}>
+            <div className={styles.textContainer}>
+              <p className={styles.smallerText}>
+                {task.start}
+                <span style={{ marginLeft: 15 }}>{task.end}</span>
+              </p>
+              <p className={styles.titleText}>{task.title}</p>
+              <p className={styles.smallerText}>
+                {task.place ? 'Place: ' + task.place : null}
+              </p>
             </div>
-          )
-      )}
+
+            <img
+              src={dots}
+              className={styles.seeMoreIcon}
+              alt="icon with 3 dots"
+            />
+          </div>
+
+          {task.id === selectedTaskId && <TaskDetails task={task} />}
+        </div>
+      ))}
     </div>
   );
 };

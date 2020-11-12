@@ -1,24 +1,20 @@
-import React, { Component } from 'react';
+import React, { useContext, useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
+import { TasksContext } from '../../../TasksContext';
+import { Tasks } from './../../../components/Tasks';
 
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
+import './calendarBox.css';
 
 const localizer = momentLocalizer(moment);
 
-export class CalendarBox extends Component {
-  state = {
-    events: [
-      {
-        start: moment().toDate(),
-        end: moment().add(1, 'days').toDate(),
-        title: 'Some title',
-      },
-    ],
-  };
-
-  render() {
-    return (
+export function CalendarBox(props) {
+  const { tasks } = useContext(TasksContext);
+  const [clickedTask, setClickedTask] = useState();
+  console.log(tasks);
+  return (
+    <>
       <div
         style={{
           height: '60vh',
@@ -31,11 +27,24 @@ export class CalendarBox extends Component {
           localizer={localizer}
           defaultDate={new Date()}
           defaultView="month"
-          events={this.state.events}
+          events={tasks}
+          startAccessor="start"
+          endAccessor="end"
+          style={{ height: `100%` }}
+          views={{
+            month: true,
+            // week: true,
+            // day: true,
+            // work_week: true,
+          }}
+          onSelectEvent={(event) => setClickedTask(event)}
         />
       </div>
-    );
-  }
+      <div style={{ height: 400 }}>
+        {clickedTask && <Tasks tasks={[clickedTask]} />}
+      </div>
+    </>
+  );
 }
 
-// export default CalendarBox;
+export default CalendarBox;

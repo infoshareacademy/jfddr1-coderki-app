@@ -6,6 +6,7 @@ import styles from './homePage.module.css';
 const HomePage = () => {
   const { tasks, user, settingsData } = useContext(TasksContext);
   const filteredTasks = tasks.slice(0, 4);
+
   return (
     <div>
       <h3 className={styles.welcome}>
