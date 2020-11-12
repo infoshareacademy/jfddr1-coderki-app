@@ -1,5 +1,13 @@
 import React from 'react';
 
-const CalendarPage = () => <div>To jest Kalendarz</div>;
+import { CalendarBox } from './components/CalendarBox';
+
+const CalendarPage = () => {
+  return (
+    <>
+      <CalendarBox />
+    </>
+  );
+};
 
 export default CalendarPage;
