@@ -7,8 +7,8 @@ This is a repository prepared by a team of three fearless novice programmers - C
 
 ## Intro 
 
-In the beggining ... there was C H A O S !!😱
-But then .. our GOD-Michał came and said - "Ladies, get yourself together!" and this is how we moved from panic 😱😱😱 to brainstorming, from brainstorming to designing and from designing to coding... This is how our app arose from ashes. Do not stop yourself and try it out 😊!
+In the beggining ... there was C H A O S !! 😱
+But then .. our GOD-Michał came and said - "Ladies, get yourself together!" and this is how we moved from panic 😱😱😱 to brainstorming... from brainstorming to designing... and ... from designing to coding... This is how our app arose from ashes. Do not stop yourself and try it out 😊!
 
 -----------------------------------------------------
 
