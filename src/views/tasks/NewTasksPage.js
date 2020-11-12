@@ -9,7 +9,7 @@ let initialState = {
   place: '',
   startTime: '',
   endTime: '',
-  decription: '',
+  description: '',
   remind: false,
   repeat: false,
 };
@@ -70,35 +70,7 @@ const AddTask = () => {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          {/* <div className={styles.buttonContainer}>
-          <p>Add members:</p>
-          <input
-            class="members-radiobutton"
-            type="radio"
-            name="members"
-            //value={newTask.member}
-            // onChange={(e) => handleChange(e)}
-          />{' '}
-          Mommy
-          <input
-            class="members-radiobutton"
-            type="radio"
-            name="members"
-            //value={newTask.member}
-            // onChange={(e) => handleChange(e)}
-          />{' '}
-          Daddy
-          <input
-            class="members-radiobutton"
-            type="radio"
-            name="members"
-            //value={newTask.member}
-            // onChange={(e) => handleChange(e)}
-          />{' '}
-          Kiddo
-        </div> */}
-
-          <p>Task description</p>
+          <p className={styles.subheader}>Task description</p>
           <input
             className={styles.description}
             name="description"
@@ -108,6 +80,7 @@ const AddTask = () => {
           />
           <div className={styles.buttonContainer}>
             <button
+              className={styles.newTaskButton}
               name="reminder"
               type="submit"
               onChange={(e) => handleChange(e)}
@@ -116,6 +89,7 @@ const AddTask = () => {
               Reminder
             </button>
             <button
+              className={styles.newTaskButton}
               name="repeat"
               type="submit"
               onChange={(e) => handleChange(e)}
@@ -125,7 +99,9 @@ const AddTask = () => {
             </button>
           </div>
 
-          <button type="submit">Save task</button>
+          <button className={styles.saveButton} type="submit">
+            Save task
+          </button>
         </form>
       </div>
     </>
