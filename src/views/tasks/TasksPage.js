@@ -7,7 +7,6 @@ import Filters from './components/Filters';
 
 const TasksPage = () => {
   const [filtered, setFiltered] = useState([]);
-  console.log('tasksfilter', filtered);
 
   return (
     <div>
