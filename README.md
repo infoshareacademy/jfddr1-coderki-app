@@ -53,8 +53,10 @@ The purpose of the developed application is to manage tasks added by users. MVP 
 
 ## Planned to-do
 
-:pushpin: Slide Show (WIP)\
-:pushpin: Accordion\
-:pushpin: Accordion\
-
-1. dodac rolę którą spełniasz w rodzinie, od której zalezy twoj zestaw uprawnien (np. blokowanie kalendarza dzieciom) 2 ustawienia wersji konta public i private, 3. Powiadomienia mailowe o zblizajacych sie zadaniach 4. ustawienia dotyczace kalandarza (zaczynasz tydzien w poniedziałek albo niedziele), 5. zmiana hasła.
+:pushpin: Tasks shared and assinged to multiple users\
+:pushpin: Task category colors customization\
+:pushpin: Enable different calendar views - day, week, month\
+:pushpin: Reminders sent to users e-mails\
+:pushpin: Repeat task functionality - daily, weekly, mothly\
+:pushpin: Private and public access - tasks shared by all members and not visible to others\
+:pushpin: Tasks statistics
