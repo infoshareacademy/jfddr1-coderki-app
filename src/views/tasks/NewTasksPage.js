@@ -9,7 +9,7 @@ let initialState = {
   place: '',
   startTime: '',
   endTime: '',
-  decription: '',
+  description: '',
   remind: false,
   repeat: false,
 };

@@ -39,12 +39,12 @@ button:active {
   display: flex;
   justify-content: space-between;
 }
-/* 
-.container {
+
+/* .container {
   padding: 16px;
   padding-bottom: 30px;
   border-radius: 10px;
-  background: #ffffff;
+  background: 'rgba(255, 255, 255, 0.5)';
   width: 100%;
   margin: 0 auto;
   margin-top: 15px;
