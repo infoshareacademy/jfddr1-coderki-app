@@ -3,7 +3,8 @@
 ### HELLO!
 
 Welcome in repository for awsome Project 3, coded during course for Junior Front-End Developer orginized by infoShare Academy.
-This is a repository prepared by a team of three fearless novice programmers - Corderki 😅. Try out our App.
+This is a repository prepared by a team of three fearless novice programmers - Corderki 😅.
+Try out our new App for tasks.
 
 ## Intro to Home Manager
 
@@ -13,7 +14,7 @@ The purpose of the developed application is to manage tasks added by users. MVP 
 
 #### Front View
 
-:heavy_check_mark: Authentication with Firebase\
+:heavy_check_mark: Authentication with Firebase
 
 #### Home View
 
@@ -24,11 +25,11 @@ The purpose of the developed application is to manage tasks added by users. MVP 
 
 #### Calendar View
 
-:heavy_check_mark: Display of a calendar dowloaded from: [Calendar Library Name](https://developer.mozilla.org/pl/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)\
+:heavy_check_mark: Display of a calendar dowloaded from: [Calendar Library Name](https://developer.mozilla.org/pl/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)
 
 #### Add Task View
 
-:heavy_check_mark: Add task form enables adding tasks to Firebase collection for a logged user\
+:heavy_check_mark: Add task form enables adding tasks to Firebase collection for a logged user
 
 #### Tasks View
 
@@ -37,12 +38,12 @@ The purpose of the developed application is to manage tasks added by users. MVP 
 :heavy_check_mark: Filtering tasks by category\
 :heavy_check_mark: Filtering tasks by status\
 :heavy_check_mark: Clearing all set filters on-button-click\
-:heavy_check_mark: In this view, update and delete functionalities are also available\
+:heavy_check_mark: In this view, update and delete functionalities are also available
 
 #### Settings View
 
 :heavy_check_mark: Setup of User name that will be displayed on a Home page\
-:heavy_check_mark: Sign out functionality\
+:heavy_check_mark: Sign out functionality
 
 ## Planned to-do
 
