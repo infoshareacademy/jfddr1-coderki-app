@@ -40,7 +40,7 @@ export function CalendarBox(props) {
           onSelectEvent={(event) => setClickedTask(event)}
         />
       </div>
-      <div style={{ height: 400 }}>
+      <div style={{ height: 730 }}>
         {clickedTask && <Tasks tasks={[clickedTask]} />}
       </div>
     </>

@@ -75,6 +75,7 @@ export const TasksProvider = ({ children }) => {
       id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()
       category: taskData.category,
       place: taskData.place,
+      status: taskData.status,
       description: taskData.description,
       start: taskData.startTime || '',
       end: taskData.endTime || '',

@@ -9,14 +9,33 @@ const TasksPage = () => {
   const [filtered, setFiltered] = useState([]);
 
   return (
-    <div>
-      <div style={{ position: 'sticky', top: 75, zIndex: 10 }}>
+    <div style={{ position: 'absolute', height: '760px', width: '100%' }}>
+      <div
+        style={{
+          position: 'absolute',
+          height: '25%',
+          top: '5px',
+          right: 0,
+          left: 0,
+          bottom: 0,
+        }}
+      >
         <Filters setFiltered={setFiltered} />
         <CategoryTagsList />
         <StatusTagsList />
         <ClearFiltersBtn />
       </div>
-      <Tasks tasks={filtered} />
+      <div
+        style={{
+          width: '100%',
+          position: 'absolute',
+          height: '48%',
+          top: '320px',
+          overflowY: 'auto',
+        }}
+      >
+        <Tasks tasks={filtered} />
+      </div>
     </div>
   );
 };

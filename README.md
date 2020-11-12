@@ -5,14 +5,15 @@
 Welcome to repository of our awsome Project 🥳, coded during course for Junior Front-End Developer orginized by infoShare Academy.
 This repo was prepared by a team of three fearless novice programmers - Corderki 😅.
 
-## Intro 
+## Intro
 
 In the beggining ... there was C H A O S !! 😱
-But then .. our GOD-Michał came and said - "Ladies, get yourself together!" and this is how we moved from panic 😱😱😱 to brainstorming... from brainstorming to designing... and ... from designing to coding... This is how our app arose from ashes. Do not stop yourself and try it out 😊!
+But then .. our GOD-Michał came and said - "Ladies, get yourself together!" and this is how we moved from panic 😱😱😱 to brainstorming... from brainstorming to [designing] (https://www.figma.com/file/Vdc9NAoXsnLe1xI7zgxeLe/Home-Manager?node-id=44%3A0)... and ... from designing to coding... This is how our app arose from ashes. Do not stop yourself and try it out 😊!
 
------------------------------------------------------
+---
 
 ### Purpose
+
 The purpose of the developed application is to manage tasks added by users. MVP version was designed for Mobile Devices.
 
 ### Available functionality
@@ -30,7 +31,7 @@ The purpose of the developed application is to manage tasks added by users. MVP 
 
 #### Calendar View
 
-:heavy_check_mark: Display of a calendar dowloaded from: [Calendar Library Name](https://developer.mozilla.org/pl/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)
+:heavy_check_mark: Display of a calendar dowloaded from: [React Big Calendar](https://github.com/jquense/react-big-calendar)
 
 #### Add Task View
 
@@ -53,4 +54,7 @@ The purpose of the developed application is to manage tasks added by users. MVP 
 ## Planned to-do
 
 :pushpin: Slide Show (WIP)\
-:pushpin: Accordion
+:pushpin: Accordion\
+:pushpin: Accordion\
+
+1. dodac rolę którą spełniasz w rodzinie, od której zalezy twoj zestaw uprawnien (np. blokowanie kalendarza dzieciom) 2 ustawienia wersji konta public i private, 3. Powiadomienia mailowe o zblizajacych sie zadaniach 4. ustawienia dotyczace kalandarza (zaczynasz tydzien w poniedziałek albo niedziele), 5. zmiana hasła.
