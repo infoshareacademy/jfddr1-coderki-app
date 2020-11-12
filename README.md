@@ -53,10 +53,10 @@ The purpose of the developed application is to manage tasks added by users. MVP 
 
 ## Planned to-do
 
-:pushpin: Tasks shared and assinged to multiple users\
 :pushpin: Task category colors customization\
-:pushpin: Enable different calendar views - day, week, month\
-:pushpin: Reminders sent to users e-mails\
+:pushpin: Reminders sent to users via e-mails\
 :pushpin: Repeat task functionality - daily, weekly, mothly\
+:pushpin: Enable different calendar views - day, week, month\
+:pushpin: Tasks shared and assinged to multiple users\
 :pushpin: Private and public access - tasks shared by all members and not visible to others\
 :pushpin: Tasks statistics
