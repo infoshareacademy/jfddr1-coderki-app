@@ -8,6 +8,7 @@ export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const [activeCategoryTags, setActiveCategoryTags] = useState([]);
   const [activeStatusTags, setActiveStatusTags] = useState([]);
+  const [lastClearId, setLastClearId] = useState(0);
 
   const [user, setUser] = useState(null);
   const [settingsData, setSettingsData] = useState({});
@@ -113,10 +114,12 @@ export const TasksProvider = ({ children }) => {
   const clearActiveTags = () => {
     setActiveCategoryTags([]);
     setActiveStatusTags([]);
+    setLastClearId((last) => last + 1);
   };
 
   const value = {
     tasks: tasks === null ? [] : tasks,
+    lastClearId,
     setTasks,
     addTask,
     userUid,
