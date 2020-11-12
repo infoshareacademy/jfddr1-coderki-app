@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/jfddr1-coderki-app/static/css/main.77e144c9.chunk.css",
-    "main.js": "/jfddr1-coderki-app/static/js/main.fe14bc5c.chunk.js",
-    "main.js.map": "/jfddr1-coderki-app/static/js/main.fe14bc5c.chunk.js.map",
+    "main.css": "/jfddr1-coderki-app/static/css/main.e29a4ea3.chunk.css",
+    "main.js": "/jfddr1-coderki-app/static/js/main.e6651419.chunk.js",
+    "main.js.map": "/jfddr1-coderki-app/static/js/main.e6651419.chunk.js.map",
     "runtime-main.js": "/jfddr1-coderki-app/static/js/runtime-main.c34a3d54.js",
     "runtime-main.js.map": "/jfddr1-coderki-app/static/js/runtime-main.c34a3d54.js.map",
-    "static/css/2.fb141226.chunk.css": "/jfddr1-coderki-app/static/css/2.fb141226.chunk.css",
-    "static/js/2.d4dd0f7d.chunk.js": "/jfddr1-coderki-app/static/js/2.d4dd0f7d.chunk.js",
-    "static/js/2.d4dd0f7d.chunk.js.map": "/jfddr1-coderki-app/static/js/2.d4dd0f7d.chunk.js.map",
+    "static/js/2.3f52bd86.chunk.js": "/jfddr1-coderki-app/static/js/2.3f52bd86.chunk.js",
+    "static/js/2.3f52bd86.chunk.js.map": "/jfddr1-coderki-app/static/js/2.3f52bd86.chunk.js.map",
     "index.html": "/jfddr1-coderki-app/index.html",
-    "precache-manifest.0efa4dac1777c45b2393dbafef021389.js": "/jfddr1-coderki-app/precache-manifest.0efa4dac1777c45b2393dbafef021389.js",
+    "precache-manifest.3c885bccb1d2e65c9f77992af360d18b.js": "/jfddr1-coderki-app/precache-manifest.3c885bccb1d2e65c9f77992af360d18b.js",
     "service-worker.js": "/jfddr1-coderki-app/service-worker.js",
-    "static/css/2.fb141226.chunk.css.map": "/jfddr1-coderki-app/static/css/2.fb141226.chunk.css.map",
-    "static/css/main.77e144c9.chunk.css.map": "/jfddr1-coderki-app/static/css/main.77e144c9.chunk.css.map",
-    "static/js/2.d4dd0f7d.chunk.js.LICENSE.txt": "/jfddr1-coderki-app/static/js/2.d4dd0f7d.chunk.js.LICENSE.txt",
+    "static/css/main.e29a4ea3.chunk.css.map": "/jfddr1-coderki-app/static/css/main.e29a4ea3.chunk.css.map",
+    "static/js/2.3f52bd86.chunk.js.LICENSE.txt": "/jfddr1-coderki-app/static/js/2.3f52bd86.chunk.js.LICENSE.txt",
     "static/media/calendar.svg": "/jfddr1-coderki-app/static/media/calendar.b4cb4ea7.svg",
     "static/media/checkbox.svg": "/jfddr1-coderki-app/static/media/checkbox.d9b70962.svg",
     "static/media/home.svg": "/jfddr1-coderki-app/static/media/home.261cde57.svg",
@@ -22,9 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c34a3d54.js",
-    "static/css/2.fb141226.chunk.css",
-    "static/js/2.d4dd0f7d.chunk.js",
-    "static/css/main.77e144c9.chunk.css",
-    "static/js/main.fe14bc5c.chunk.js"
+    "static/js/2.3f52bd86.chunk.js",
+    "static/css/main.e29a4ea3.chunk.css",
+    "static/js/main.e6651419.chunk.js"
   ]
 }
