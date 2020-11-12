@@ -17,7 +17,7 @@ export const MainSettings = ({
   }
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>Main settings: </h1>
+      <h1 className={styles.header}>Settings: </h1>
       <h2 className={styles.subheader}>Set account by default as</h2>
       <div className={styles.buttonContainer}>
         <button
