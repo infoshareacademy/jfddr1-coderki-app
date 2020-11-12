@@ -51,7 +51,6 @@ export const TasksProvider = ({ children }) => {
       .onSnapshot((snapshot) => {
         const tasks = [];
         snapshot.forEach((doc) => {
-          console.log('get start', doc.get('start'));
           tasks.push({
             id: doc.id,
             title: doc.get('title') || '',
@@ -71,7 +70,6 @@ export const TasksProvider = ({ children }) => {
   }, [userUid]);
 
   const addTask = (taskData) => {
-    console.log('taskData', taskData);
     const newTask = {
       title: taskData.title,
       id: firebase.firestore.FieldValue.serverTimestamp(), // ewentualnie toDate()

@@ -8,13 +8,13 @@ import Root from './views/Root/Root';
 import AuthGuard from './views/AuthGuard.js/AuthGuard';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <TasksProvider>
-      <AuthGuard>
-        <Root />
-      </AuthGuard>
-    </TasksProvider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <TasksProvider>
+    <AuthGuard>
+      <Root />
+    </AuthGuard>
+  </TasksProvider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
