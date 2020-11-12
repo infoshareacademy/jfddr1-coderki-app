@@ -7,21 +7,25 @@ import 'firebase/auth';
 export const MainSettings = ({
   privateOrPublic,
   emailNotifications,
+  mondaySunday,
   setSettings,
 }) => {
   let history = useHistory();
-
   function handleClick() {
     firebase.auth().signOut();
     history.push('/home');
   }
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>Settings: </h1>
+      <h1 className={styles.header}>Settings </h1>
       <h2 className={styles.subheader}>Set account by default as</h2>
       <div className={styles.buttonContainer}>
         <button
-          className={styles.settingsButton}
+          className={
+            privateOrPublic === 'private'
+              ? styles.activeButton
+              : styles.settingsButton
+          }
           name="privateOrPublic"
           type="submit"
           onClick={() => setSettings('privateOrPublic', 'private')}
@@ -30,7 +34,11 @@ export const MainSettings = ({
           Private
         </button>
         <button
-          className={styles.settingsButton}
+          className={
+            privateOrPublic === 'public'
+              ? styles.activeButton
+              : styles.settingsButton
+          }
           name="privateOrPublic"
           type="submit"
           onClick={() => setSettings('privateOrPublic', 'public')}
@@ -42,7 +50,11 @@ export const MainSettings = ({
       <h2 className={styles.subheader}>Set e-mail notifications</h2>
       <div className={styles.buttonContainer}>
         <button
-          className={styles.settingsButton}
+          className={
+            emailNotifications === 'yes'
+              ? styles.activeButton
+              : styles.settingsButton
+          }
           name="emailNotifications"
           type="submit"
           onClick={() => setSettings('emailNotifications', 'yes')}
@@ -51,7 +63,11 @@ export const MainSettings = ({
           Yes
         </button>
         <button
-          className={styles.settingsButton}
+          className={
+            emailNotifications === 'no'
+              ? styles.activeButton
+              : styles.settingsButton
+          }
           name="emailNotifications"
           type="submit"
           onClick={() => setSettings('emailNotifications', 'no')}
@@ -64,8 +80,32 @@ export const MainSettings = ({
       <button>Click to choose your local time zone</button> */}
       <h2 className={styles.subheader}>Start your week on</h2>
       <div className={styles.buttonContainer}>
-        <button className={styles.settingsButton}>Sunday</button>
-        <button className={styles.settingsButton}>Monday</button>
+        <button
+          className={
+            mondaySunday === 'sunday'
+              ? styles.activeButton
+              : styles.settingsButton
+          }
+          name="mondaySunday"
+          type="submit"
+          onClick={() => setSettings('mondaySunday', 'sunday')}
+          value={mondaySunday}
+        >
+          Sunday
+        </button>
+        <button
+          className={
+            mondaySunday === 'monday'
+              ? styles.activeButton
+              : styles.settingsButton
+          }
+          name="mondaySunday"
+          type="submit"
+          onClick={() => setSettings('mondaySunday', 'monday')}
+          value={mondaySunday}
+        >
+          Monday
+        </button>
       </div>
       <h2 className={styles.subheader}>Change your password</h2>
       <button className={styles.settingsButton}>

@@ -11,8 +11,8 @@ let initialState = {
   endTime: '',
   description: '',
   status: '',
-  remind: false,
-  repeat: false,
+  // remind: '',
+  // repeat: '',
 };
 
 const AddTask = () => {
@@ -21,9 +21,6 @@ const AddTask = () => {
 
   const handleChange = (e) => {
     setNewTask({ ...newTask, [e.target.name]: e.target.value });
-  };
-  const handleModal = (e) => {
-    alert('to do');
   };
 
   const handleSubmit = (e) => {
@@ -123,8 +120,8 @@ const AddTask = () => {
             </option>
           </select>
           <div className={styles.buttonContainer}>
-            <button
-              className={styles.newTaskButton}
+            {/* <button
+              className={
               name="reminder"
               type="submit"
               onChange={(e) => handleModal(e)}
@@ -140,7 +137,7 @@ const AddTask = () => {
               value={newTask.repeat}
             >
               Repeat
-            </button>
+            </button> */}
           </div>
 
           <button className={styles.saveButton} type="submit">

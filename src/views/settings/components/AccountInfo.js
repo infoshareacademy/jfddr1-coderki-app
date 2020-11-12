@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './AccountInfo.module.css';
 
 export const AccountInfo = ({ userName, familyRole, setSettings }) => {
@@ -19,7 +19,11 @@ export const AccountInfo = ({ userName, familyRole, setSettings }) => {
       <h2 className={styles.subheader}>Set family role</h2>
       <div className={styles.buttonContainer}>
         <button
-          className={styles.settingsButton}
+          className={
+            familyRole === 'parent'
+              ? styles.activeButton
+              : styles.settingsButton
+          }
           name="familyRole"
           type="submit"
           onClick={() => setSettings('familyRole', 'parent')}
@@ -28,7 +32,9 @@ export const AccountInfo = ({ userName, familyRole, setSettings }) => {
           Parent
         </button>
         <button
-          className={styles.settingsButton}
+          className={
+            familyRole === 'child' ? styles.activeButton : styles.settingsButton
+          }
           name="familyRole"
           type="submit"
           onClick={() => setSettings('familyRole', 'child')}

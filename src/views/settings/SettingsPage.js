@@ -11,12 +11,12 @@ const initialState = {
   userName: '',
   familyRole: '',
   // selectedFile: '',
-  taskCategory: '',
-  taskCategoryColor: '',
+  // taskCategory: '',
+  // taskCategoryColor: '',
   privateOrPublic: '',
   emailNotifications: '',
   // localtimezone??
-  // MondaySunday??
+  mondaySunday: '',
   // ChangePassword??
   // Logout??
 };
@@ -63,6 +63,7 @@ const SettingsPage = () => {
         privateOrPublic={settings.privateOrPublic}
         setSettings={handleSetSettings}
         emailNotifications={settings.emailNotifications}
+        mondaySunday={settings.mondaySunday}
       />
       <button className={styles.saveBtn} onClick={handleSubmit}>
         Save settings
