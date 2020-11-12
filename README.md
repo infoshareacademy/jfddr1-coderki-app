@@ -8,7 +8,7 @@ This repo was prepared by a team of three fearless novice programmers - Corderki
 ## Intro
 
 In the beggining ... there was C H A O S !! 😱
-But then .. our GOD-Michał came and said - "Ladies, get yourself together!" and this is how we moved from panic 😱😱😱 to brainstorming... from brainstorming to [designing] (https://www.figma.com/file/Vdc9NAoXsnLe1xI7zgxeLe/Home-Manager?node-id=44%3A0)... and ... from designing to coding... This is how our app arose from ashes. Do not stop yourself and try it out 😊!
+But then .. our GOD-Michał came and said - "Ladies, get yourself together!" and this is how we moved from panic 😱😱😱 to brainstorming... from brainstorming to [designing](https://www.figma.com/file/Vdc9NAoXsnLe1xI7zgxeLe/Home-Manager?node-id=44%3A0)... and ... from designing to coding... This is how our app arose from ashes. Do not stop yourself and try it out 😊!
 
 ---
 
