@@ -22,6 +22,9 @@ const AddTask = () => {
   const handleChange = (e) => {
     setNewTask({ ...newTask, [e.target.name]: e.target.value });
   };
+  const handleModal = (e) => {
+    alert('to do');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +38,7 @@ const AddTask = () => {
         <h1> Add task details</h1>
         <form onSubmit={(event) => handleSubmit(event)}>
           <input
+            className={styles.input}
             type="text"
             name="title"
             placeholder="Title"
@@ -42,21 +46,44 @@ const AddTask = () => {
             onChange={(e) => handleChange(e)}
           />
           <input
+            className={styles.input}
             type="text"
             name="place"
             placeholder="Place"
             value={newTask.place}
             onChange={(e) => handleChange(e)}
           />
-          <input
-            type="text"
+          <select
+            className={styles.select}
             name="category"
             placeholder="Category"
-            value={newTask.category}
             onChange={(e) => handleChange(e)}
-          />
+          >
+            <option className={styles.option} value="Home">
+              Home
+            </option>
+            <option className={styles.option} value="Work">
+              Work
+            </option>
+            <option className={styles.option} value="School">
+              School
+            </option>
+            <option className={styles.option} value="Relax">
+              Relax
+            </option>
+            <option className={styles.option} value="Sport">
+              Sport
+            </option>
+            <option className={styles.option} value="Important">
+              Important
+            </option>
+            <option className={styles.option} value="Someday">
+              Someday
+            </option>
+          </select>
           <div className={styles.inputContainer}>
             <input
+              className={styles.input}
               name="startTime"
               placeholder="Start"
               type="date"
@@ -64,6 +91,7 @@ const AddTask = () => {
               onChange={(e) => handleChange(e)}
             />
             <input
+              className={styles.input}
               name="endTime"
               placeholder="End"
               type="date"
@@ -71,15 +99,14 @@ const AddTask = () => {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <p className={styles.subheader}>Task description</p>
           <input
-            className={styles.description}
+            className={styles.input}
             name="description"
             type="text"
+            placeholder="Task description"
             value={newTask.description}
             onChange={(e) => handleChange(e)}
           />
-          <p className={styles.subheader}>Task status</p>
           <select
             className={styles.select}
             name="status"
@@ -100,16 +127,16 @@ const AddTask = () => {
               className={styles.newTaskButton}
               name="reminder"
               type="submit"
-              onChange={(e) => handleChange(e)}
+              onChange={(e) => handleModal(e)}
               value={newTask.reminder}
             >
-              Reminder
+              Remind
             </button>
             <button
               className={styles.newTaskButton}
               name="repeat"
               type="submit"
-              onChange={(e) => handleChange(e)}
+              onChange={(e) => handleModal(e)}
               value={newTask.repeat}
             >
               Repeat
