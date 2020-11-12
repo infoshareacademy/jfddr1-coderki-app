@@ -110,13 +110,16 @@ const AddTask = () => {
             onChange={(e) => handleChange(e)}
           >
             <option className={styles.option} value="new">
+              Select status
+            </option>
+            <option className={styles.option} value="new">
               New
             </option>
-            <option className={styles.option} value="in-progress">
+            <option className={styles.option} value="in progress">
               In progress
             </option>
             <option className={styles.option} value="completed">
-              Completed
+              Closed
             </option>
           </select>
           <div className={styles.buttonContainer}>

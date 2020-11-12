@@ -1,8 +1,8 @@
 .tag {
-  width: 120px;
-  min-height: 40px;
+  width: fit-content;
+  min-height: 35px;
   font-size: 14px;
-  margin-left: 20px;
+  margin-left: 8px;
   text-transform: uppercase;
   cursor: pointer;
   padding: 0 10px;
@@ -16,21 +16,20 @@
 }
 
 .paddingAndMargin {
-  padding-left: 10px;
-  margin: 10px;
+  padding-left: 5px;
+  margin: 5px;
 }
 
 .inputSize {
   width: 98%;
   height: 20px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .clearFiltersBtn {
-  margin: 10px;
+  margin: 5px;
   border-radius: 10px;
-  width: 300px;
-  margin-top: 20px;
+  width: 180px;
   box-shadow: 4px 3px 8px #888888;
   background: #3f5097;
 }
