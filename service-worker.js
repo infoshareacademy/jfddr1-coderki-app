@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/jfddr1-coderki-app/precache-manifest.3c885bccb1d2e65c9f77992af360d18b.js"
+  "/jfddr1-coderki-app/precache-manifest.ac1da6352b5937c8ad990499de5c895e.js"
 );
 
 self.addEventListener('message', (event) => {
